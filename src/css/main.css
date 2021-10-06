@@ -14,7 +14,7 @@ body::-webkit-scrollbar {
 }
 
 body {
-  background-color: #00988E;
+  background: linear-gradient(180deg, #00988E 0%, #FFFFFF 100%);
 }
 
 header {
@@ -83,7 +83,7 @@ header .logo {
 
 #find-tickets {
   border-radius: 30px;
-  background-color: rgb(255, 208, 0);
+  background-color: #F2BD35;
   cursor: pointer;
   margin-top: 100px;
   height: 60px;
