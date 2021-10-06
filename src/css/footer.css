@@ -75,3 +75,9 @@ footer > a {
   text-decoration: underline;
   cursor: pointer;
 }
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
