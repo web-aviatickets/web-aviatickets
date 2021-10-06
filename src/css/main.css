@@ -98,7 +98,8 @@ header .logo {
   height: 95%;
 }
 
-h2 {
+section > h2 {
+  font-weight: 500;
   margin: 50px auto;
   width: 10%;
 }
