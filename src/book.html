@@ -17,12 +17,12 @@
     <!-- /header -->
 
     <!-- section Places -->
-    <!-- 82 x 49 -->
+
     <section class="places">
         <div class="container">
             <h1>ОБЕРІТЬ МІСЦЯ</h1>
             <div class="places_choose">
-                <div class="places_choose_subhead">Перша частина літаку</div>
+                <div class="subhead">Перша частина літаку</div>
                 <div class="places_choose_board">
                     <div class="places_choose_board_arrow">
                         <img src="../img/icons/arrow_left.svg" alt="arrow_left">
@@ -131,12 +131,75 @@
         </div>
     </section>
 
-    <!-- /section Choose -->
+    <!-- /section Places -->
 
     <!-- section Contact Information -->
 
     <section class="contact_information">
-
+        <div class="container">
+            <h1>КОНТАКТНА ІНФОРМАЦІЯ ДЛЯ ЗАМОВЛЕННЯ</h1>
+            <div class="contact_information_reg">
+                <div class="subhead">Данні для оформленяя квитку:</div>
+                <div class="contact_information_reg_fields">
+                    <div class="contact_information_reg_fields_row">
+                        <div class="field">
+                            <label>Email</label>
+                            <input id="top_left_radius" type="text">
+                        </div>
+                        <div class="field">
+                            <label>Телефон</label>
+                            <input type="text">
+                        </div>
+                        <div class="field">
+                            <label>Країна</label>
+                            <input id="top_right_radius" type="text">
+                        </div>
+                    </div>
+                    <div class="contact_information_reg_fields_row">
+                        <div class="field">
+                            <label>Пол</label>
+                            <input type="text">
+                        </div>
+                        <div class="field">
+                            <label>Дата народження</label>
+                            <input type="text">
+                        </div>
+                        <div class="field">
+                            <label>Громадянство</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="contact_information_reg_fields_row">
+                        <div class="field">
+                            <label>Документ</label>
+                            <input type="text">
+                        </div>
+                        <div class="field">
+                            <label>Номер паспорта</label>
+                            <input type="text">
+                        </div>
+                        <div class="field">
+                            <label>Дійсний до</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="contact_information_reg_fields_row">
+                        <div class="field">
+                            <label>Прізвище</label>
+                            <input id="bottom_left_radius" type="text">
+                        </div>
+                        <div class="field">
+                            <label>Ім'я</label>
+                            <input type="text">
+                        </div>
+                        <div class="field">
+                            <label>По батькові</label>
+                            <input id="bottom_right_radius" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- /section Contact Information -->
@@ -144,7 +207,42 @@
     <!-- section Payment Methods -->
 
     <section class="payment_methods">
-
+        <div class="container">
+            <h1>СПОСОБИ ОПЛАТИ:</h1>
+            <div class="payment_methods_choose">
+                <div class="card">
+                    <img class="methods_img" src="../img/icons/outline_credit_card_black_24dp 1.svg" alt="card">
+                    <div class="text">Картка</div>
+                </div>
+                <div class="book">
+                    <img class="methods_img" src="../img/icons/outline_book_online_black_24dp 1.svg" alt="blank">
+                    <div class="text">Забронювати</div>
+                </div>
+                <div class="qr_code">
+                    <img class="methods_img" src="../img/icons/outline_qr_code_black_24dp 1.svg" alt="qr_code">
+                    <div class="text">Qr code</div>
+                </div>
+                <div class="payment_methods_for_card" class="hidden">
+                    <div class="num_card">
+                        <label>Номер картки</label>
+                        <input class="num_card_input" type="text">
+                    </div>
+                    <div class="wrapper_for_cvv-year">
+                        <div class="cvv">
+                            <label>cvv</label>
+                            <input class="cvv_input" type="text">
+                        </div>
+                        <div class="year">
+                            <label>мм/рр</label>
+                            <input class="year_input" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment_methods_btn">
+                <button>Оплатити</button>
+            </div>
+        </div>
     </section>
 
      <!-- /section Payment Methods -->
