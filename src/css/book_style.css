@@ -52,6 +52,10 @@ button {
     color: rgba(0, 0, 0, 0.4);
 }
 
+.hidden {
+    display: none;
+}
+
 .logo {
     display: flex;
     justify-content: left;
@@ -340,6 +344,12 @@ label {
 .payment_methods_for_card .num_card_input {
     width: 370px;
     height: 52px;
+}
+
+.num_card, .year, .cvv {
+    display: flex;
+    justify-content: center;
+    align-content: center;    
 }
 
 .payment_methods_for_card .cvv_input, .year_input {
