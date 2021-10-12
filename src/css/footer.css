@@ -81,3 +81,37 @@ footer > a {
   flex-direction: column;
   justify-content: space-between;
 }
+
+@media (max-width: 260px) {
+  footer {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 586px) {
+  .footer-refs-container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .footer-refs-container > div {
+    margin: 10px;
+  }
+
+  .references-container {
+    align-items: flex-start;
+  }
+
+  .references-container > p {
+    text-align: left;
+  }
+
+  hr {
+    height: 1px;
+  }
+
+  footer {
+    height: auto;
+    /*padding: 20px;*/
+  }
+}
