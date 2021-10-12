@@ -121,13 +121,13 @@ h4 {
   background-color: #78F398;
 }
 
-@media only screen and (max-width: 240px) {
+@media (max-width: 240px) {
   #form-container {
     height: auto;
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media (max-width: 800px) {
   div.logo, div.logo > img {
     width: 80px;
     height: 80px;
@@ -161,7 +161,7 @@ h4 {
   }
 }
 
-@media only screen and (min-width: 801px) and (max-width: 1081px) {
+@media (min-width: 801px) and (max-width: 1081px) {
   form {
     width: 500px;
     margin: 10px auto;
@@ -188,7 +188,7 @@ h4 {
   }
 }
 
-@media only screen and (max-width: 1269px) {
+@media (max-width: 1269px) {
   #find-tickets {
     font-size:small;
     width: 160.8px;
