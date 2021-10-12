@@ -60,6 +60,10 @@ footer {
   margin: 5px;
 }
 
+.social-networks > a {
+  cursor: pointer;
+}
+
 hr {
   border: none;
   height: 1px;
@@ -112,6 +116,17 @@ footer > a {
 
   footer {
     height: auto;
-    /*padding: 20px;*/
+    padding-top: 10px;
+  }
+
+  .logo > img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (orientation: landscape) {
+  footer {
+    height: auto;
   }
 }
