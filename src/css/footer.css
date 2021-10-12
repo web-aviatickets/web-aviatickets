@@ -60,6 +60,10 @@ footer {
   margin: 5px;
 }
 
+.social-networks > a {
+  cursor: pointer;
+}
+
 hr {
   border: none;
   height: 1px;
@@ -80,4 +84,49 @@ footer > a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (max-width: 260px) {
+  footer {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 586px) {
+  .footer-refs-container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .footer-refs-container > div {
+    margin: 10px;
+  }
+
+  .references-container {
+    align-items: flex-start;
+  }
+
+  .references-container > p {
+    text-align: left;
+  }
+
+  hr {
+    height: 1px;
+  }
+
+  footer {
+    height: auto;
+    padding-top: 10px;
+  }
+
+  .logo > img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (orientation: landscape) {
+  footer {
+    height: auto;
+  }
 }
