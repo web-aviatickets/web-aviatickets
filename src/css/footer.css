@@ -74,7 +74,7 @@ footer h2 {
   font-weight: 500;
 }
 
-footer > a {
+footer > a.more-info {
   color: gray;
   text-decoration: underline;
   cursor: pointer;
