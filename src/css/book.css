@@ -1,7 +1,18 @@
+
+
+
+/* === COMMON === */ 
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+.wrapper-inner {
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 body {
@@ -23,9 +34,9 @@ h1 {
     text-align: center;
 }
 
-header {
+/* header {
     margin: 48px 0px 18px 265px
-}
+} */
 
 button {
     width: 300px;
@@ -56,6 +67,9 @@ button {
     display: none;
 }
 
+
+/* === Header === */
+
 .logo {
     display: flex;
     justify-content: left;
@@ -64,26 +78,28 @@ button {
     height: 121px;
 }
 
+.logo-inner {
+    padding-left: 265px;
+    padding-top: 48px;
+}
+
 .icon {
     background: rgba(0, 0, 0, 0);
 }
 
-.container {
-    padding: 0 164px;
-    margin: 0 auto;
-}
+/* === / Header === */
 
-/* section Places */
+/* === Places === */
 
 .places {
     display: flex;
     min-height: 923px;
-    padding: 20px 0 68px 0
+    /* padding: 20px 0 68px 0 */
 }
 
 .places_choose {
     padding: 30px 38px 96px 38px;
-    width: 1592px;
+    width: auto;
     height: 634px;
     background-color: #78F398;
     border-radius: 20px;
@@ -98,7 +114,7 @@ button {
 }
 
 .places_choose_board_cabin {
-    width: 1322px;
+    width: auto;
     height: 279px;
     background: #FFFFFF;
     border: 1px solid #000000;
@@ -108,31 +124,30 @@ button {
 }
 
 .places_choose_board_cabin .places_choose_board_cabin_first {
-    width: 1320;
+    /* width: 1320; */
     height: 99px;
     background: #FFFFFF;
     border-radius: 20px;
 }
 
 .places_choose_board_cabin .places_choose_board_cabin_second {
-    width: 1320;
+    /* width: 1320; */
     height: 99px;
     margin-top: 81px;
     background: #FFFFFF;
     border-radius: 20px;
 }
 
-.places_choose_board_cabin_first_top {
+.places_choose_board_cabin_first_top, .places_choose_board_cabin_first_bottom {
     display: flex;
+    width: 1376px;
+    height: 50px;
 }
 
-.places_choose_board_cabin_first_bottom {
-    display: flex;
-}
 
 .place {
-    height: 49px;
-    width: 86px;
+    width: 16%;
+    height: 100%;
     border: 2px solid #000000;
     background: #FFFFFF;
     text-align: center;
@@ -140,21 +155,6 @@ button {
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
-}
-
-.places_choose_board_arrow {
-    display: flex;
-    width: 77px;
-    height: 77px;
-    margin-top: 103px;
-    background: rgba(181, 181, 181, 0.4);
-    border-radius: 100%; 
-    justify-content: center;
-    align-content: center;
-}
-
-.places_choose_board_arrow img {
-    background-color: rgba(0, 0, 0, 0);
 }
 
 .places_choose_price {
@@ -227,19 +227,18 @@ button {
     color: #FFFFFF;
 }
 
-/* /section Places */
+/* === / Places === */
 
-/* section Contact Information */
+/* === Contact Information === */
 
 .contact_information {
     display: flex;
     min-height: 778px;
-    padding: 113px 0 68px 0
 }
 
 .contact_information_reg {
     padding: 30px 34px 77px 34px;
-    width: 1592px;
+    width: auto;
     height: 576px;
     background-color: #78F398;
     border-radius: 20px;
@@ -252,17 +251,21 @@ button {
 .contact_information_reg_fields_row {
     display: flex;
     justify-content: space-between;
+    width: 1500px;
+    height: 100px;
 }
 
 .field {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 34%;
+    height: 100%;
 }
 
 .field input {
-    width: 500px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.35);
 }
 
@@ -271,20 +274,19 @@ label {
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
-    line-height: 35px;
     text-align: center; 
     color: rgba(0, 0, 0, 0.38);
     position: absolute;
 }
 
-/* /section Contact Information */
+/* === Contact Information === */
 
-/* section Payment Methods */
+/* === Payment Methods === */
 
 .payment_methods {
     display: flex;
     min-height: 207px;
-    padding: 176px 0 240px 0
+    /* padding: 176px 0 240px 0 */
 }
 
 .payment_methods_btn {
@@ -326,7 +328,7 @@ label {
 
 .payment_methods_for_card {
     position: absolute;
-    width: 437px;
+    width: 25%;
     height: 234px;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.4);
@@ -366,4 +368,53 @@ label {
     margin-top: 59px;
 }
 
-/* /section Payment Methods */
+/* === Payment Methods === */
+
+@media (max-width: 1660px) {
+    .places_choose_board_cabin_first_top, .places_choose_board_cabin_first_bottom {
+        width: 1150px;
+    }
+
+    .contact_information_reg_fields_row {
+        width: 1350px;
+    }
+}
+
+@media (max-width: 1440px) {
+
+    .places_choose_board_cabin_first_top, .places_choose_board_cabin_first_bottom {
+        width: 950px;
+    }
+
+    .contact_information_reg_fields_row {
+        width: 1070px;
+    }
+}
+
+@media (max-width: 1260px) {
+
+    .contact_information_reg_fields_row {
+        width: 1067.020px;
+    }
+
+    .payment_methods_choose {
+        width: 1070px;
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    .places_choose_board_cabin_first_top, .places_choose_board_cabin_first_bottom {
+        width: 870px;
+    }
+
+    .contact_information_reg_fields_row {
+        width: 870px;
+    }
+
+    .payment_methods_choose {
+        width: 870px;
+    }
+
+}
