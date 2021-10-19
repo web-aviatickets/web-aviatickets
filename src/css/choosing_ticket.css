@@ -395,3 +395,43 @@ span::before {
     padding: 50px;
   }
 }
+
+@media (max-width: 1440px) {
+
+  .ticket_block {
+    width: 1197px;
+  }
+
+}
+
+@media (max-width: 1240px) {
+
+  .ticket_block {
+    width: 1000px;
+  }
+
+  .ticket_block_choose_btn button {
+    width: 265.37px;
+    font-size: 21px;
+  }
+
+  .ticket_block_choose_text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .ticket_block {
+    width: 876px;
+  }
+
+  .ticket_block_choose_btn button {
+    width: 190.37px;
+    font-size: 20px;
+  }
+
+  .ticket_block_choose_text {
+    font-size: 17px;
+  }
+}
