@@ -1,0 +1,420 @@
+
+
+
+/* === COMMON === */ 
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper-inner {
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+body {
+    background: linear-gradient(180deg, #00988E 0%, #FFFFFF 100%);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    margin-bottom: 100px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+/* header {
+    margin: 48px 0px 18px 265px
+} */
+
+button {
+    width: 300px;
+    height: 75px;
+    background-color: #F2BD35;
+    border-radius: 50px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+    margin-top: 63px;
+}
+
+.subhead {
+    background-color: #78F398;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* === Header === */
+
+.logo {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 121px;
+    height: 121px;
+}
+
+.logo-inner {
+    padding-left: 265px;
+    padding-top: 48px;
+}
+
+.icon {
+    background: rgba(0, 0, 0, 0);
+}
+
+/* === / Header === */
+
+/* === Places === */
+
+.places {
+    display: flex;
+    min-height: 923px;
+    /* padding: 20px 0 68px 0 */
+}
+
+.places_choose {
+    padding: 30px 38px 96px 38px;
+    width: auto;
+    height: 634px;
+    background-color: #78F398;
+    border-radius: 20px;
+}
+
+.places_choose_board {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #78F398;
+    padding-top: 100px;
+}
+
+.places_choose_board_cabin {
+    width: auto;
+    height: 279px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 0 25px;
+}
+
+.places_choose_board_cabin .places_choose_board_cabin_first {
+    /* width: 1320; */
+    height: 99px;
+    background: #FFFFFF;
+    border-radius: 20px;
+}
+
+.places_choose_board_cabin .places_choose_board_cabin_second {
+    /* width: 1320; */
+    height: 99px;
+    margin-top: 81px;
+    background: #FFFFFF;
+    border-radius: 20px;
+}
+
+.places_choose_board_cabin_first_top, .places_choose_board_cabin_first_bottom {
+    display: flex;
+    width: 1376px;
+    height: 50px;
+}
+
+
+.place {
+    width: 16%;
+    height: 100%;
+    border: 2px solid #000000;
+    background: #FFFFFF;
+    text-align: center;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+}
+
+.places_choose_price {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 53px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#top_left_radius {
+    border-radius: 20px 0 0 0;
+}
+#bottom_left_radius {
+    border-radius: 0 0 0 20px;
+}
+#top_right_radius {
+    border-radius: 0 20px 0 0;
+}
+#bottom_right_radius {
+    border-radius: 0 0 20px 0;
+}
+
+.place_conditon {
+    display: flex;
+    justify-content: space-around;
+    height: 33px;
+    margin-top: 40px;
+}
+
+.place_conditon_free, .place_conditon_selected, .place_conditon_occupied{
+    display: flex;
+}
+
+
+.place_conditon_free_green {
+    width: 33px;
+    height: 33px;
+    background: #66FF33;
+    border-radius: 5px; 
+}
+
+.place_conditon_free_red {
+    width: 33px;
+    height: 33px;
+    background: #D83600;
+    border-radius: 5px; 
+}
+
+.place_conditon_free_grey {
+    width: 33px;
+    height: 33px;
+    background: #B5B5B5;
+    border-radius: 5px; 
+}
+
+.place_conditon_text {
+    margin-left: 40px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    color: #FFFFFF;
+}
+
+/* === / Places === */
+
+/* === Contact Information === */
+
+.contact_information {
+    display: flex;
+    min-height: 778px;
+}
+
+.contact_information_reg {
+    padding: 30px 34px 77px 34px;
+    width: auto;
+    height: 576px;
+    background-color: #78F398;
+    border-radius: 20px;
+}
+
+.contact_information_reg_fields {
+    margin-top: 33px;
+}
+
+.contact_information_reg_fields_row {
+    display: flex;
+    justify-content: space-between;
+    width: 1500px;
+    height: 100px;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34%;
+    height: 100%;
+}
+
+.field input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+label {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    text-align: center; 
+    color: rgba(0, 0, 0, 0.38);
+    position: absolute;
+}
+
+/* === Contact Information === */
+
+/* === Payment Methods === */
+
+.payment_methods {
+    display: flex;
+    min-height: 207px;
+    /* padding: 176px 0 240px 0 */
+}
+
+.payment_methods_btn {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.payment_methods_choose {
+    position: relative;
+    padding: 21px 61px;
+    width: 1200px;
+    height: 202px;
+    background-color: #78F398;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card, .book, .qr_code {
+    width: 266.45px;
+    height: 157.56px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 24px;
+    
+}
+
+.text {
+    font-family: "Roboto";
+    font-style: normal; 
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.4);
+} 
+
+.payment_methods_for_card {
+    position: absolute;
+    width: 25%;
+    height: 234px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    margin-top: 130px;
+    padding: 28px 38px 46px 29px;
+}
+
+.payment_methods_for_card input {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+}
+
+.payment_methods_for_card .num_card_input {
+    width: 370px;
+    height: 52px;
+}
+
+.num_card, .year, .cvv {
+    display: flex;
+    justify-content: center;
+    align-content: center;    
+}
+
+.payment_methods_for_card .cvv_input, .year_input {
+    width: 109px;
+    height: 49px;
+}
+
+.payment_methods_for_card .year {
+    margin-left: 48px;
+}
+
+.wrapper_for_cvv-year {
+    display: flex;
+    margin-top: 59px;
+}
+
+/* === Payment Methods === */
+
+@media (max-width: 1660px) {
+    .places_choose_board_cabin_first_top, .places_choose_board_cabin_first_bottom {
+        width: 1150px;
+    }
+
+    .contact_information_reg_fields_row {
+        width: 1350px;
+    }
+}
+
+@media (max-width: 1440px) {
+
+    .places_choose_board_cabin_first_top, .places_choose_board_cabin_first_bottom {
+        width: 950px;
+    }
+
+    .contact_information_reg_fields_row {
+        width: 1070px;
+    }
+}
+
+@media (max-width: 1260px) {
+
+    .contact_information_reg_fields_row {
+        width: 1067.020px;
+    }
+
+    .payment_methods_choose {
+        width: 1070px;
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    .places_choose_board_cabin_first_top, .places_choose_board_cabin_first_bottom {
+        width: 870px;
+    }
+
+    .contact_information_reg_fields_row {
+        width: 870px;
+    }
+
+    .payment_methods_choose {
+        width: 870px;
+    }
+
+}
