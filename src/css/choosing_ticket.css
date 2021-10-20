@@ -31,7 +31,7 @@ header {
 }
 
 h1 {
-  margin: 22px;
+  margin-top: 22px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
@@ -331,73 +331,31 @@ span::before {
   }
 
   h1 {
-    margin: 30px;
     font-size: large;
-  }
-
-  #about-container {
-    height: auto;
-    padding: 30px;
-  }
-
-  div#about {
-    padding: 3px;
-    margin: 0;
-    width: 90%;
-    left: 5%;
-  }
-}
-
-@media (min-width: 801px) and (max-width: 1081px) {
-  form {
-    width: 500px;
-    margin: 10px auto;
-  }
-
-  #find-tickets {
-    font-size: medium;
-  }
-
-  /*input {
-    margin: 10px;
-  }*/
-
-  #input-holder {
-    justify-content: space-between;
-  }
-
-  #about {
-    padding: 50px;
-  }
-
-  #form-container {
-    height: 900px;
   }
 }
 
 @media (max-width: 1269px) {
-  #find-tickets {
-    font-size:small;
-    width: 160.8px;
+  div.logo, div.logo > img {
+    width: 100px;
+    height: 100px;
   }
-
-  input {
-    font-size: medium;
-    width: 160.8px;
-    /*margin: 10px;*/
+  header {
+    margin: 30px;
   }
-
   #input-holder {
     flex-wrap: wrap;
-  }
-
-  #about {
-    padding: 50px;
   }
 }
 
 @media (max-width: 1440px) {
-
+  div.logo, div.logo > img {
+    width: 150px;
+    height: 150px;
+  }
+  header {
+    margin: 50px;
+  }
   .ticket_block {
     width: 1197px;
   }
