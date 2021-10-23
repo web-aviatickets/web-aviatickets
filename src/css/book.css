@@ -8,7 +8,7 @@
 
 .wrapper-inner {
     margin: 0 auto;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 100px;
 }
 
@@ -21,7 +21,7 @@ a {
 }
 
 h1 {
-    margin-bottom: 100px;
+    margin-bottom: 10px;
     font-family: "Roboto";
     font-style: normal;
     font-weight: bold;
@@ -44,10 +44,9 @@ button {
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
-    line-height: 28px;
     text-align: center;
     color: #000000;
-    margin-top: 63px;
+    /* margin-top: 63px; */
 }
 
 .subhead {
@@ -64,7 +63,7 @@ button {
 }
 
 
-/* === Header === */
+/* === LOGO === */
 
 .logo {
     display: flex;
@@ -75,15 +74,15 @@ button {
 }
 
 .logo-inner {
-    padding-left: 265px;
-    padding-top: 48px;
+    padding-left: 150px;
+    padding-top: 24px;
 }
 
 .icon {
     background: rgba(0, 0, 0, 0);
 }
 
-/* === / Header === */
+/* === / LOGO === */
 
 /* === Places === */
 
@@ -94,9 +93,9 @@ button {
 }
 
 .places_choose {
-    padding: 30px 38px 96px 38px;
-    width: auto;
-    height: 634px;
+    padding: 30px 38px 38px 38px;
+    min-width: 100%;
+    min-height: 634px;
     background-color: #78F398;
     border-radius: 20px;
 }
@@ -160,7 +159,7 @@ button {
 
 .places_choose_price {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-content: center;
     margin-top: 53px;
     font-family: "Roboto";
@@ -233,6 +232,48 @@ button {
     color: #FFFFFF;
 }
 
+.hidden_block_condition {
+    display: none;
+    
+}
+
+.hidden_block_red {
+    background: #D83600;
+}
+
+.hidden_block_green {
+    background: #66FF33;
+}
+
+.hidden_block_grey {
+    background: #B5B5B5;
+}
+
+.hidden_block_free, .hidden_block_selected, .hidden_block_occupied {
+    display: flex;
+}
+
+.hidden_block_green, .hidden_block_grey, .hidden_block_red {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.hidden_block_text {
+    margin: 0 10px;
+}
+
+.places_choose_board:hover .hidden_block_condition {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    position: absolute;
+    margin-top: 125px;
+    width: 50%;
+    z-index: 9999;
+    min-height: 15px;
+}
+
 /* === / Places === */
 
 /* === Contact Information === */
@@ -243,7 +284,7 @@ button {
 }
 
 .contact_information_reg {
-    padding: 30px 34px 77px 34px;
+    padding: 30px 34px 26px 34px;
     width: auto;
     min-height: 576px;
     background-color: #78F398;
@@ -286,6 +327,13 @@ label {
     position: absolute;
 }
 
+.contact_information_reg_btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+
 /* === Contact Information === */
 
 /* === Payment Methods === */
@@ -294,12 +342,15 @@ label {
     display: flex;
     min-height: 207px;
     /* padding: 176px 0 240px 0 */
+    margin-top: 200px;
+    margin-bottom: 175px;
 }
 
 .payment_methods_btn {
     display: flex;
     justify-content: center;
     align-content: center;
+    margin-top: 25px;
 }
 
 .payment_methods_choose {
@@ -402,12 +453,7 @@ label {
         display: block;
     }
 
-    .places {
-        display: block;
-    }
-
-    .contact_information_reg,
-    .places_choose {
+    .contact_information_reg{
         border-radius: 0;
     }
 
@@ -432,6 +478,10 @@ label {
 
 @media (max-width: 960px) {
 
+    .places {
+        display: block;
+    }
+
     .places_choose_board {
         width: 100%;
     }
@@ -440,17 +490,40 @@ label {
         width: 700px;
     }
 
+    .places_choose {
+        border-radius: 0;
+    }
+
+    button {
+        width: 200px;
+    }
+
+    label {
+        font-size: 25px;
+    }
+
     .card,
     .book,
     .qr_code {
         width: 150.45px;
     }
 
+    .hidden_condition {
+        display: none;
+    } 
 }
 
 @media (max-width: 743px) {
     .payment_methods_choose {
         width: 623px;
+    }
+
+    .hidden_logo {
+        display: none;
+    }
+
+    .payment_methods {
+        margin-top: 0px;
     }
 
     .places_choose_board_cabin {
@@ -459,9 +532,16 @@ label {
         overflow-y: hidden;
         /* white-space: nowrap; */
     }
+
+    .places_choose_price_number {
+        font-size: 27px;
+    }
+
 }
 
 @media (max-width: 680px) {
+
+
     .places_choose_board_cabin {
         margin: 0;
     }
@@ -489,4 +569,47 @@ label {
     .card, .book {
         margin-bottom: 20px;
     } 
+}
+
+
+@media (max-width: 600px) {
+    .places_choose_price_number {
+        font-size: 25px;
+    }
+    
+    label {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 425px) {
+    .hidden_block_text {
+        font-size: 18px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 38px;   
+    }
+
+    .subhead {
+        font-size: 30px;
+    }
+
+    .place_conditon_free_green, .place_conditon_free_red, .place_conditon_free_grey {
+        width: 15px;
+        height: 15px;
+    }
+
+    .places_choose {
+        padding: 38px 7px 38px 7px;
+    }
+
+    .places_choose_price {
+        display: block;
+    }
+
 }

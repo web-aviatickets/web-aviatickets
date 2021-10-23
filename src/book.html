@@ -11,15 +11,8 @@
     <title>Booking</title>
 </head>
 <body>
-    <!-- header -->
 
-    <header class="wrapper-outer">
-        <div class="wrapper-inner logo-inner">
-            <div class="logo"><img src="../img/logo/logo.svg" alt="logo"></div>
-        </div>
-    </header>
-
-    <!-- /header -->
+    <section class="logo-inner hidden_logo"><div class="logo"><img src="../img/logo/logo.svg" alt="logo"></div></section>
 
     <!-- section Places -->
 
@@ -29,6 +22,20 @@
             <div class="places_choose">
                 <div class="subhead">Перша частина літаку</div>
                 <div class="places_choose_board">
+                    <div class="hidden_block_condition">
+                        <div class="hidden_block_free">
+                            <div class="hidden_block_green"></div>
+                            <div class="hidden_block_text">Вільні</div>
+                        </div>
+                        <div class="hidden_block_selected">
+                            <div class="hidden_block_red"></div>
+                            <div class="hidden_block_text">Вибрані</div>
+                        </div>
+                        <div class="hidden_block_occupied">
+                            <div class="hidden_block_grey"></div>
+                            <div class="hidden_block_text">Зайняті</div>
+                        </div>
+                    </div>
                     <div class="places_choose_board_cabin">  
                         <div class="places_choose_board_cabin_first">
                             <div class="places_choose_board_cabin_first_top">
@@ -109,11 +116,11 @@
                     </div>
                 </div>
                 <div class="places_choose_price">
-                    <div class="places_choose_price_number">Ціна за 1 місце:</div>
-                    <div class="places_choose_price_money">450 грн</div>
+                    <div class="places_choose_price_number">Ціна за 1 місце: 450 грн</div>
+                    <div class="places_choose_price_btn"><a href="#contact"><button>Вибрати</button></a></div>
                 </div>
             </div>
-            <div class="place_conditon">
+            <div class="place_conditon hidden_condition">
                 <div class="place_conditon_free">
                     <div class="place_conditon_free_green"></div>
                     <div class="place_conditon_text">Вільні місця</div>
@@ -131,6 +138,8 @@
     </section>
 
     <!-- /section Places -->
+
+    <section class="logo-inner hidden_logo" id="contact"><div class="logo"><img src="../img/logo/logo.svg" alt="logo"></div></section>
 
     <!-- section Contact Information -->
 
@@ -197,11 +206,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="contact_information_reg_btn"><a href="#payment"><button>Підтвердити</button></a></div>
             </div>
         </div>
     </section>
 
     <!-- /section Contact Information -->
+
+    <section class="logo-inner hidden_logo" id="payment"><div class="logo"><img src="../img/logo/logo.svg" alt="logo"></div></section>
 
     <!-- section Payment Methods -->
 
@@ -238,9 +250,7 @@
                     </div>
                 </div>
             </div>
-            <div class="payment_methods_btn">
-                <button>Оплатити</button>
-            </div>
+            <div class="payment_methods_btn"><button>Оплатити</button></div>
         </div>
     </section>
 
