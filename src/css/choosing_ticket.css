@@ -183,8 +183,9 @@ h4 {
 }
 
 .ticket_block {
-  width: 1398px;
-  height: 670px;
+  /* width: 1382px; */
+  min-width: 100%;
+  min-height: 670px;
   margin: 100px 0;
   background-color: #78F398;
   padding: 27px 50px 57px 50px;
@@ -218,7 +219,8 @@ h4 {
 }
 
 .ticket_block_info_way_arrow {
-  width: 820px;
+  /* width: 820px; */
+  width: 200%;
   margin: 0 24px;
 }
 
@@ -282,6 +284,7 @@ span::before {
   font-size: 24px;
   text-align: center;
   color: #000000;
+  margin: 0 20px;
 }
 
 .ticket_block_choose_btn button {
@@ -331,7 +334,7 @@ span::before {
   }
 
   h1 {
-    font-size: large;
+    font-size: 30px;
   }
 }
 
@@ -356,13 +359,13 @@ span::before {
   header {
     margin: 50px;
   }
-  .ticket_block {
+  /* .ticket_block {
     width: 1197px;
-  }
+  } */
 
 }
 
-@media (max-width: 1240px) {
+/* @media (max-width: 1240px) {
 
   .ticket_block {
     width: 1000px;
@@ -391,5 +394,82 @@ span::before {
 
   .ticket_block_choose_text {
     font-size: 17px;
+  }
+}
+
+@media (max-width: 920px) {
+  .ticket_block_choose_btn button {
+    width: 122.37px;
+    font-size: 17px;
+}
+  .ticket_block {
+    width: 799px;
+  }
+} */
+
+@media (max-width: 1200px) {
+  .ticket_block {
+    /* margin: 0; */
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 855px) {
+  .ticket_block_choose {
+    display: block;
+  }
+
+  .ticket_block_choose_text {
+    margin: 20px 0;
+    text-align: left;
+  }
+  .ticket_block_choose_btn {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+} 
+
+
+@media (max-width: 577px) {
+
+  .ticket_block_info {
+    padding: 60px 10px;
+  }
+
+  .ticket_block_choose_btn button {
+    width: 187.37px;
+    height: 46px;
+  }
+
+  .ticket_block_info_way_to, .ticket_block_info_way_from, .ticket_block_info_time_text {
+    font-size: 12px;
+  }
+  .ticket_block_info_way_arrow_text_info {
+    font-size: 9px;
+  }
+  span::before {
+    border-bottom: 0;
+    border-right: 0;
+  }
+  .ticket_block_choose_text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 467px) {
+  .ticket_block_choose_btn button {
+    width: 122.37px;
+    height: 46px;
+    font-size: 18px;
+  }
+  .ticket_block_choose_btn_text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 356px) {
+  .ticket_block {
+    padding: 0 20px;
   }
 }
