@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  //const img = document.getElementById('form-container');
-  //img.style.width = window.innerWidth;
-  //img.style.height = window.innerHeight;
   styleFooter();
+  const logos = document.getElementsByClassName('logo');
+  for (let logo of logos) {
+    logo.addEventListener('click', () => window.location.href = '/src/main.html');
+  }
 });

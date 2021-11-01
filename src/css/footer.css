@@ -27,6 +27,7 @@ footer {
   width: 121px;
   height: 121px;
   margin: 5px;
+  cursor: pointer;
 }
 
 .footer-refs-container {
