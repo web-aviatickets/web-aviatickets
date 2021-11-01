@@ -5,3 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     logo.addEventListener('click', () => window.location.href = '/src/main.html');
   }
 });
+
+function goToChoosingTicket() {
+  console.log('window.location.href');
+  window.location.href = '/src/choosing_ticket.html';
+}
