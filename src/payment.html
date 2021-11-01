@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/book.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="frontJS/main.js"></script>
+    <script src="frontJS/footer.js"></script>
+    <title>Booking</title>
+</head>
+<body>
+<section class="logo-inner hidden_logo" id="payment"><div class="logo"><img src="../img/logo/logo.svg" alt="logo"></div></section>
+
+<!-- section Payment Methods -->
+
+<section class="wrapper-outer payment_methods">
+    <div class="wrapper-inner">
+        <h1>СПОСОБИ ОПЛАТИ:</h1>
+        <div class="payment_methods_choose">
+            <div class="card">
+                <img class="methods_img" src="../img/icons/outline_credit_card_black_24dp 1.svg" alt="card">
+                <div class="text">Картка</div>
+            </div>
+            <div class="book">
+                <img class="methods_img" src="../img/icons/outline_book_online_black_24dp 1.svg" alt="blank">
+                <div class="text">Забронювати</div>
+            </div>
+            <div class="qr_code">
+                <img class="methods_img" src="../img/icons/outline_qr_code_black_24dp 1.svg" alt="qr_code">
+                <div class="text">Qr code</div>
+            </div>
+            <div class="payment_methods_for_card hidden">
+                <div class="num_card">
+                    <label>Номер картки</label>
+                    <input class="num_card_input" type="text">
+                </div>
+                <div class="wrapper_for_cvv-year">
+                    <div class="cvv">
+                        <label>cvv</label>
+                        <input class="cvv_input" type="text">
+                    </div>
+                    <div class="year">
+                        <label>мм/рр</label>
+                        <input class="year_input" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="payment_methods_btn"><button>Далі</button></div>
+    </div>
+</section>
+
+ <!-- /section Payment Methods -->
+
+ <!-- Footer -->
+
+<footer></footer>
+
+<!-- /Footer -->
+</body>
+</html>
