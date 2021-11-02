@@ -588,11 +588,11 @@ label {
     }
 
     label {
-        font-size: 12px;
+        font-size: 6px;
     }
 
     h1 {
-        font-size: 38px;   
+        font-size: 26px;   
     }
 
     .subhead {
@@ -612,4 +612,11 @@ label {
         display: block;
     }
 
+    .card, .book, .qr_code {
+        width: 104.45px;
+    }
+
+    .text {
+        font-size: 15px;
+    }
 }
