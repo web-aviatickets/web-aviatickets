@@ -565,3 +565,14 @@ span::before {
     left: 42.5%;
   }
 }
+
+@media (max-width: 800px) {
+  div.logo, div.logo > img {
+    width: 80px;
+    height: 80px;
+  }
+
+  header {
+    margin: 30px;
+  }
+}
