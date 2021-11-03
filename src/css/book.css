@@ -8,7 +8,7 @@
 
 .wrapper-inner {
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 10px;
     padding-bottom: 100px;
 }
 
@@ -252,6 +252,7 @@ button {
 
 .hidden_block_free, .hidden_block_selected, .hidden_block_occupied {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .hidden_block_green, .hidden_block_grey, .hidden_block_red {
