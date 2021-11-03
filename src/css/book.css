@@ -631,3 +631,7 @@ label {
       margin: 30px;
     }
 }
+
+section.payment_methods {
+    margin-top: 20px;
+}
