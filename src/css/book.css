@@ -335,6 +335,13 @@ label {
     padding-top: 30px;
 }
 
+.contact_information_reg_fields_two {
+    display: none;
+}
+
+.contact_information_reg_fields_one {
+    display: none;
+}
 
 /* === Contact Information === */
 
@@ -589,15 +596,38 @@ label {
     label {
         font-size: 17px;
     }
+
+    .contact_information_reg_fields_two {
+        display: block;
+    }
+    .contact_information_reg_fields_two .contact_information_reg_fields_row .field {
+        width: 50%;
+    }
+    .contact_information_reg_fields {
+        display: none;
+    }
 }
 
 @media (max-width: 425px) {
-    .hidden_block_text {
-        font-size: 18px;
+
+    .contact_information_reg_fields_one {
+        display: block;
     }
 
-    label {
-        font-size: 6px;
+    .contact_information_reg_fields_two {
+        display: none;
+    }
+
+    .contact_information_reg_fields_one .contact_information_reg_fields_row .field {
+        width: 100%;
+    }
+
+    .contact_information_reg_fields_one .contact_information_reg_fields_row .field label {
+        font-size: 21px;
+    }
+
+    .hidden_block_text {
+        font-size: 18px;
     }
 
     h1 {
