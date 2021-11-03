@@ -154,7 +154,8 @@ button {
     font-family: "Roboto";
     font-style: normal;
     font-weight: normal;
-    font-size: 30px;
+    font-size: 23px;
+    padding: 7px;
 }
 
 .places_choose_price {
@@ -618,6 +619,17 @@ label {
 
     .text {
         font-size: 15px;
+    }
+}
+
+@media (max-width: 316px) {
+    .hidden_block_green, .hidden_block_red, .hidden_block_grey {
+        width: 15px;
+        height: 15px;
+    }
+
+    .hidden_block_text {
+        font-size: 12px;
     }
 }
 

@@ -427,6 +427,11 @@ span::before {
   #form-container {
     height: auto;
   }
+
+  span::before {
+    border-bottom: 0;
+    border-right: 0;
+  }
   .ticket_block_choose {
     display: block;
   }
@@ -466,10 +471,10 @@ span::before {
   }
 
   .ticket_block_info_way_to, .ticket_block_info_way_from, .ticket_block_info_time_text {
-    font-size: 9px;
+    font-size: 13px;
   }
   .ticket_block_info_way_arrow_text_info {
-    font-size: 7px;
+    font-size: 13px;
   }
   span::before {
     border-bottom: 0;
@@ -506,7 +511,7 @@ span::before {
     height: auto;
   }
   .ticket_block {
-    padding: 0 20px;
+    padding: 20px 20px;
   }
 }
 
@@ -515,6 +520,26 @@ span::before {
     height: auto;
   }
   
+  .ticket_block_info_way {
+    display: block;
+  }
+
+  .ticket_block_choose_btn button {
+    width: 82.37px;
+  }
+
+  .ticket_block_info_way_to, .ticket_block_info_way_from, .ticket_block_info_time_text {
+    font-size: 15px;
+  }
+
+  .ticket_block_info_way_arrow_text {
+    margin: 30px 0;
+  }
+
+  .ticket_block_info_way_arrow {
+    width: 80%;
+  }
+
   form {
     width: 100%;
     height: auto;
