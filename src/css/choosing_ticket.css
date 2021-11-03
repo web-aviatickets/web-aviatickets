@@ -42,7 +42,7 @@ h1 {
 }
 
 form {
-  width: 60%;
+  width: 95%;
   height: auto;
   margin-top: 50px;
   margin-left: auto;
@@ -574,5 +574,15 @@ span::before {
 
   header {
     margin: 30px;
+  }
+}
+
+@media (max-width: 750px) {
+  input {
+    font-size: medium;
+  }
+
+  #input-date {
+    height: auto;
   }
 }
