@@ -521,6 +521,11 @@ label {
     .hidden_condition {
         display: none;
     } 
+
+    .payment_methods_choose .text,
+    .contact_information_reg_fields_one .field{
+        font-size: medium;
+    }
 }
 
 @media (max-width: 832px) {
@@ -622,10 +627,6 @@ label {
         width: 100%;
     }
 
-    .contact_information_reg_fields_one .contact_information_reg_fields_row .field label {
-        font-size: 21px;
-    }
-
     .hidden_block_text {
         font-size: 18px;
     }
@@ -655,8 +656,8 @@ label {
         width: 104.45px;
     }
 
-    .text {
-        font-size: 15px;
+    .payment_methods_choose .text{
+        font-size: small;
     }
 }
 
