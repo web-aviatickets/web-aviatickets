@@ -515,7 +515,7 @@ span::before {
   }
 }
 
-@media (max-width: 285px) {
+@media (max-width: 660px) {
   #form-container {
     height: auto;
   }
@@ -555,8 +555,9 @@ span::before {
   }
   
   input {
-    width: 100%;
+    width: 90%;
     border: none;
+    border-radius: 20px;
     height: 8%;
     padding: 0px;
     height: 28px;
@@ -565,7 +566,7 @@ span::before {
   }
   
   #input-first {
-    border-radius: 0 0 0 0;
+    border-radius: 20px;
     margin-top: 0px;
     height: 28px;
     margin-bottom: auto;
@@ -574,18 +575,18 @@ span::before {
   #input-date {
     margin-top: auto;
     margin-bottom: auto;
-    height: 28px;
+    height: 22px;
+    padding: 3px;
     font-family: 'Roboto', sans-serif;
     margin-top: 1%;
     color : gray;
   }
   #find-tickets {
-    border-radius: 0 0 0 0;
+    border-radius: 20px;
     background-color: #F2BD35;
     cursor: pointer;
     margin-top: 1%;
-    height: 8%;
-    width: 100%;
+    width: 90%;
     height: 28px;
     left: 42.5%;
   }
@@ -610,4 +611,8 @@ span::before {
   #input-date {
     height: auto;
   }
+}
+
+.ticket_block {
+  margin-top: 20px;
 }

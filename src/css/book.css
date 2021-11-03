@@ -154,7 +154,7 @@ button {
     font-family: "Roboto";
     font-style: normal;
     font-weight: normal;
-    font-size: 23px;
+    font-size: 19px;
     padding: 7px;
 }
 
@@ -484,6 +484,7 @@ label {
     }
 
     .places_choose_board {
+        padding-top: 40px;
         width: 100%;
     }
 
@@ -514,7 +515,13 @@ label {
     } 
 }
 
-@media (max-width: 743px) {
+@media (max-width: 832px) {
+    .places_choose_board_cabin {
+        width: 832px;
+    }
+}
+
+@media (max-width: 760px) {
     .payment_methods_choose {
         width: 623px;
     }
