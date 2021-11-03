@@ -339,6 +339,9 @@ span::before {
 }
 
 @media (max-width: 1269px) {
+  #form-container {
+    height: auto;
+  }
   div.logo, div.logo > img {
     width: 100px;
     height: 100px;
@@ -352,6 +355,9 @@ span::before {
 }
 
 @media (max-width: 1440px) {
+  #form-container {
+    height: auto;
+  }
   div.logo, div.logo > img {
     width: 150px;
     height: 150px;
@@ -408,6 +414,9 @@ span::before {
 } */
 
 @media (max-width: 1200px) {
+  #form-container {
+    height: auto;
+  }
   .ticket_block {
     /* margin: 0; */
     border-radius: 0;
@@ -415,6 +424,9 @@ span::before {
 }
 
 @media (max-width: 855px) {
+  #form-container {
+    height: auto;
+  }
   .ticket_block_choose {
     display: block;
   }
@@ -432,6 +444,9 @@ span::before {
 
 
 @media (max-width: 577px) {
+  #form-container {
+    height: auto;
+  }
 
   h1 {
     font-size: 22px;
@@ -470,52 +485,12 @@ span::before {
     margin-left: auto;
     margin-right: auto;
   }
-  
-  #input-holder {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  
-  input {
-    width: 25%;
-    border: none;
-    height: 8%;
-    padding: 0px;
-    height: 28px;
-    text-align: center;
-    font-size: 14px;
-  }
-  
-  #input-first {
-    border-radius: 5px 0 0 5px;
-    margin-top: 0px;
-    height: 28px;
-    margin-bottom: auto;
-    font-size: 14px;
-  }
-  
-  #input-date {
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 28px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    color : gray;
-  }
-  #find-tickets {
-    border-radius: 0 5px 5px 0;
-    background-color: #F2BD35;
-    cursor: pointer;
-    margin-top: 0px;
-    height: 8%;
-    width: 25%;
-    height: 28px;
-    left: 42.5%;
-  }
 }
 
 @media (max-width: 467px) {
+  #form-container {
+    height: auto;
+  }
   .ticket_block_choose_btn button {
     width: 122.37px;
     height: 46px;
@@ -527,12 +502,19 @@ span::before {
 }
 
 @media (max-width: 356px) {
+  #form-container {
+    height: auto;
+  }
   .ticket_block {
     padding: 0 20px;
   }
 }
 
 @media (max-width: 285px) {
+  #form-container {
+    height: auto;
+  }
+  
   form {
     width: 100%;
     height: auto;
@@ -548,21 +530,20 @@ span::before {
   }
   
   input {
-    width: 25%;
+    width: 100%;
     border: none;
     height: 8%;
     padding: 0px;
     height: 28px;
     text-align: center;
-    font-size: 8px;
+    margin-top: 1%;
   }
   
   #input-first {
-    border-radius: 5px 0 0 5px;
+    border-radius: 0 0 0 0;
     margin-top: 0px;
     height: 28px;
     margin-bottom: auto;
-    font-size: 8px;
   }
   
   #input-date {
@@ -570,16 +551,16 @@ span::before {
     margin-bottom: auto;
     height: 28px;
     font-family: 'Roboto', sans-serif;
-    font-size: 8px;
+    margin-top: 1%;
     color : gray;
   }
   #find-tickets {
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 0 0 0;
     background-color: #F2BD35;
     cursor: pointer;
-    margin-top: 0px;
+    margin-top: 1%;
     height: 8%;
-    width: 25%;
+    width: 100%;
     height: 28px;
     left: 42.5%;
   }
