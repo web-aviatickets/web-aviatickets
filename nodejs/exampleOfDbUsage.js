@@ -8,7 +8,7 @@ async function example () {
   const con = await database.createConnection();
   con.connect( async (err) => {
     if (err) throw err;
-    await database.getFlightById(1)
+    await database.getFlightsByParams('Париж', 'Пекін', '2021-12-31')
     .then(res => console.log(res))
     .catch(err => console.error(err));
     con.destroy();
@@ -18,7 +18,7 @@ async function example () {
 example();
 
 // other examples of db queries usage
-// await this.getFlightsByParams('Париж', 'Пекін', '2021-12-31 23:59:59');
+// await this.getFlightsByParams('Париж', 'Пекін', '2021-12-31');
 // await this.getAllPlaces();
 // await this.getFlightById(2);
 // await this.getAllSeats(3);

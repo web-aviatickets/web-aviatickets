@@ -120,7 +120,7 @@ class Database {
                    ON p2.place_id = flights.where_place
                    WHERE p1.place_name = '${from}' AND
                          p2.place_name = '${to}' AND
-                         flights.flight_date = '${date}'`;
+                         DATE(flights.flight_date) = '${date}'`;
     await this.execQueryPromise(query)
     .catch(err => console.error(err))
     .then(rows => data = rows);
