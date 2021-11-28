@@ -46,7 +46,8 @@ form {
   width: 60%;
   height: auto;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;  
+
 }
 
 #input-holder {
@@ -210,5 +211,11 @@ h4 {
 
   #about {
     padding: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  #find-tickets {
+    left: 0;
   }
 }

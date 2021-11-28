@@ -72,6 +72,7 @@ class Server {
     req.on('error', (err) => console.error(err));
 
     req.on('data', chunk => {
+      console.log(JSON.parse(chunk));
       data += chunk;
     });
 
