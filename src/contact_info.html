@@ -7,7 +7,7 @@
     <meta name="description"  content="Вигідні тарифи авіакомпаній на aviatickets.ua.">
     <link rel="stylesheet" href="src/css/book.css">
     <link rel="stylesheet" href="src/css/footer.css">
-    <script defer src="src/frontJS/from.js"></script>
+    <script defer src="src/frontJS/form.js"></script>
     <script defer src="src/frontJS/footer.js"></script>
     <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
     <title>Booking</title>
@@ -41,7 +41,7 @@
                         <input type="text" placeholder="Пол" name="gender">
                     </div>
                     <div class="field">
-                        <input type="date" placeholder="Дата народження" name="dateOfBirth">
+                        <input type="text" placeholder="Дата народження" name="dateOfBirth">
                     </div>
                     <div class="field">
                         <input type="text" placeholder="Громадянство" name="citizenship">
@@ -52,7 +52,7 @@
                         <input type="text" placeholder="Документ" name="document">
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Номер паспорта" name="passportNumber">
+                        <input type="number" placeholder="Номер паспорта" name="passportNumber">
                     </div>
                     <div class="field">
                         <input type="text" placeholder="Дійсний до" name="valid">
@@ -101,7 +101,7 @@
                         <input type="text" placeholder="Документ" name="document">
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Номер паспорта" name="passportNumber">
+                        <input type="number" placeholder="Номер паспорта" name="passportNumber">
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
@@ -120,7 +120,7 @@
                         <input type="text" placeholder="Дійсний до" name="valid">
                     </div>
                 </div>
-                <div class="contact_information_reg_btn_two"><button type="submit">Далі</button></div>
+                <div class="contact_information_reg_btn_two"><a id="href" href="payment"><button type="submit">Далі</button></a></div>
             </form>
             <form id="form" class="contact_information_reg_fields_one" method="POST">
                 <div class="contact_information_reg_fields_row">
@@ -183,7 +183,7 @@
                         <input type="text" placeholder="Дійсний до" name="valid">
                     </div>
                 </div>
-                <div class="contact_information_reg_btn_one"><button type="submit">Далі</button></div>
+                <div class="contact_information_reg_btn_one"><a id="href" href="payment"><button type="submit">Далі</button></a></div>
             </form>
         </div>
     </div>
