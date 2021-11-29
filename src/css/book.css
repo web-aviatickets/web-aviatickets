@@ -201,25 +201,23 @@ button {
     display: flex;
 }
 
-
-.place_conditon_free_green {
-    width: 33px;
-    height: 33px;
+.green {
     background: #66FF33;
-    border-radius: 5px;
 }
 
-.place_conditon_free_red {
-    width: 33px;
-    height: 33px;
+.red {
     background: #D83600;
-    border-radius: 5px;
 }
 
-.place_conditon_free_grey {
+.grey {
+    background: #B5B5B5;
+}
+
+
+
+.place_conditon_blk {
     width: 33px;
     height: 33px;
-    background: #B5B5B5;
     border-radius: 5px;
 }
 
@@ -238,24 +236,12 @@ button {
     
 }
 
-.hidden_block_red {
-    background: #D83600;
-}
-
-.hidden_block_green {
-    background: #66FF33;
-}
-
-.hidden_block_grey {
-    background: #B5B5B5;
-}
-
 .hidden_block_free, .hidden_block_selected, .hidden_block_occupied {
     display: flex;
     flex-wrap: wrap;
 }
 
-.hidden_block_green, .hidden_block_grey, .hidden_block_red {
+.hidden_block {
     width: 20px;
     height: 20px;
     border-radius: 5px;
@@ -293,7 +279,7 @@ button {
     border-radius: 20px;
 }
 
-.contact_information_reg_fields {
+#form {
     margin-top: 33px;
     width: 100%;
 }
@@ -316,23 +302,20 @@ button {
 .field input {
     width: 100%;
     height: 100%;
+    padding: 15px;
+    text-align: center;
+    font-size: x-large;
     border: 1px solid rgba(0, 0, 0, 0.35);
 }
 
-label {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.38);
-    position: absolute;
-}
-
-.contact_information_reg_btn {
+.contact_information_reg_btn, .contact_information_reg_btn_one, .contact_information_reg_btn_two {
     display: flex;
     justify-content: center;
     padding-top: 30px;
+}
+
+.contact_information_reg_btn_one, .contact_information_reg_btn_two {
+    display: none;
 }
 
 .contact_information_reg_fields_two {
@@ -605,10 +588,18 @@ label {
     .contact_information_reg_fields_two {
         display: block;
     }
+
+    .contact_information_reg_btn_two {
+        display: flex;
+    }
+
     .contact_information_reg_fields_two .contact_information_reg_fields_row .field {
         width: 50%;
     }
     .contact_information_reg_fields {
+        display: none;
+    }
+    .contact_information_reg_btn {
         display: none;
     }
 }
@@ -619,7 +610,15 @@ label {
         display: block;
     }
 
+    .contact_information_reg_btn_one {
+        display: flex;
+    }
+
     .contact_information_reg_fields_two {
+        display: none;
+    }
+
+    .contact_information_reg_btn_two {
         display: none;
     }
 

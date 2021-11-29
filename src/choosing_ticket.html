@@ -5,6 +5,8 @@
     <meta name="description"  content="Придбати авіаквитки Київ-Дніпро легко і зручно на aviatickets.ua . Оберіть свій найкращий рейс!">
     <link rel="stylesheet" href="src/css/choosing_ticket.css">
     <link rel="stylesheet" href="src/css/footer.css">
+    <script src="src/frontJS/form.js" defer></script>
+    <script src="src/frontJS/footer.js" defer></script>
     <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
   </head>
   <body>
@@ -20,7 +22,8 @@
           <input id="input-first" name="from" type="text" placeholder="Звідки?">
           <input placeholder="Куди?" name="to" type="text" >
           <input placeholder="Коли?" id="input-date" type="date" name="date">
-          <input id="find-tickets" type="submit" value="Далі">
+          <a id="href" href="chooseTicket"><input id="find-tickets" type="submit" value="Далі"></a>
+          <!-- <input id="find-tickets" type="submit" value="Далі"> -->
         </div>
       </form>
     </div>
@@ -78,7 +81,5 @@
       </div>
     </section>
     <footer></footer>
-    <script src="src/frontJS/main.js"></script>
-    <script src="src/frontJS/footer.js"></script>
   </body>
 </html>

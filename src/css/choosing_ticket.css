@@ -87,13 +87,18 @@ header .logo {
   height: 121px;
 }
 
+#href {
+  height: 8%;
+  width: 25%;
+}
+
 #find-tickets {
   border-radius: 0 10px 10px 0;
   background-color: #F2BD35;
   cursor: pointer;
   margin-top: 0px;
-  height: 8%;
-  width: 25%;
+  height: 100%;
+  width: 100%;
   /*padding: 0px;*/
   left: 42.5%;
 }
@@ -121,7 +126,6 @@ section > h2 {
 h4 {
   margin: 10px;
 }
-
 
 #about-flight {
   height: 60%;
@@ -586,9 +590,12 @@ span::before {
     background-color: #F2BD35;
     cursor: pointer;
     margin-top: 1%;
+    left: 42.5%;
+  }
+
+  #href {
     width: 90%;
     height: 28px;
-    left: 42.5%;
   }
 }
 
