@@ -86,7 +86,7 @@ class Database {
     const dbschema = {'places': dbplaces, 'flights': dbflights, 'tickets': dbtickets, 'customers': dbcustomers, 'booked_tickets': dbbookedTickets};
     const con = await this.createConnection();
     con.connect( async (err) => {
-      if (err) throw err;
+      if (err) throw new Error(err);
       for (let schema in dbschema) {
         await this.execQueryPromise(dbschema[schema])
         .catch(err => console.error(err));
