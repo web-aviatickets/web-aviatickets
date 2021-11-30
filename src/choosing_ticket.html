@@ -19,10 +19,10 @@
       <h1>ПРИДБАТИ КВИТКИ ПО ВСЬОМУ СВІТУ</h1>
       <form id="form">
         <div id="input-holder">
-          <input id="input-first" name="from_place" type="text" placeholder="Звідки?">
-          <input placeholder="Куди?" name="where_place" type="text" >
-          <input placeholder="Коли?" id="input-date" type="date" name="flight_date">
-          <a id="href" href="chooseTicket"><input id="find-tickets" type="submit" value="Далі"></a>
+          <input id="input-first" name="from_place" type="text" placeholder="Звідки?"  required>
+          <input placeholder="Куди?" name="where_place" type="text" required>
+          <input placeholder="Коли?" id="input-date" type="date" name="flight_date" required>
+          <a id="getFromDB" href="chooseTicket"><input id="find-tickets" type="submit" value="Далі"></a>
           <!-- <input id="find-tickets" type="submit" value="Далі"> -->
         </div>
       </form>

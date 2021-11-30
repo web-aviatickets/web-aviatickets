@@ -87,7 +87,7 @@ header .logo {
   height: 121px;
 }
 
-#href {
+#getFromDB {
   height: 8%;
   width: 25%;
 }
@@ -593,7 +593,7 @@ span::before {
     left: 42.5%;
   }
 
-  #href {
+  #getFromDB {
     width: 90%;
     height: 28px;
   }

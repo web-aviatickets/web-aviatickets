@@ -27,163 +27,184 @@
             <form id="form" class="contact_information_reg_fields" method="POST">
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input id="top_left_radius" type="email" placeholder="Email" name="email">
+                        <input id="top_left_radius" type="email" placeholder="Email" name="email" required>
                     </div>
                     <div class="field">
-                        <input type="tel" placeholder="Телефон" name="phoneNumber">
+                        <input type="tel" placeholder="Телефон" name="phoneNumber" required>
                     </div>
                     <div class="field">
-                        <input id="top_right_radius" type="text" placeholder="Країна" name="country">
+                        <input id="top_right_radius" type="text" placeholder="Країна" name="country" required>
+                    </div>
+                </div>
+                <div class="contact_information_reg_fields_row">
+                    <div class="sex">
+                        <label>
+                            <input type="radio" placeholder="Пол" value="male" name="gender" checked>
+                            <span>Чоловік<span>
+                        </label>
+                        <label>
+                            <input type="radio" placeholder="Пол" value="female" name="gender">
+                            <span>Жінка<span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Дата народження" name="dateOfBirth" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Громадянство" name="citizenship" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="Пол" name="gender">
+                        <input type="text" placeholder="Документ" name="document" required>
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Дата народження" name="dateOfBirth">
+                        <input type="number" placeholder="Номер паспорта" name="passportNumber" required>
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Громадянство" name="citizenship">
+                        <input type="text" placeholder="Дійсний до" name="valid" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="Документ" name="document">
+                        <input id="bottom_left_radius" type="text" placeholder="Прізвище" name="surname" required>
                     </div>
                     <div class="field">
-                        <input type="number" placeholder="Номер паспорта" name="passportNumber">
+                        <input type="text" placeholder="Ім'я" name="name" required>
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Дійсний до" name="valid">
+                        <input id="bottom_right_radius" type="text" placeholder="По батькові" name="middleName" required>
                     </div>
                 </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input id="bottom_left_radius" type="text" placeholder="Прізвище" name="surname">
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="Ім'я" name="name">
-                    </div>
-                    <div class="field">
-                        <input id="bottom_right_radius" type="text" placeholder="По батькові" name="middleName">
-                    </div>
-                </div>
-                <div class="contact_information_reg_btn"><a id="href" href="payment"><button type="submit">Далі</button></a></div>
+                <div class="contact_information_reg_btn"><a id="getFromDB" href="payment"><button type="submit">Далі</button></a></div>
             </form>
             <form id="form" class="contact_information_reg_fields_two" method="POST">
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="email" placeholder="Email" name="email">
+                        <input type="email" placeholder="Email" name="email" required>
                     </div>
                     <div class="field">
-                        <input type="tel" placeholder="Телефон" name="phoneNumber">
+                        <input type="tel" placeholder="Телефон" name="phoneNumber" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="Країна" name="country">
+                        <input type="text" placeholder="Країна" name="country" required>
                     </div>
-                    <div class="field">
-                        <input type="text" placeholder="Пол" name="gender">
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Дата народження" name="dateOfBirth">
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="Громадянство" name="citizenship">
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Документ" name="document">
-                    </div>
-                    <div class="field">
-                        <input type="number" placeholder="Номер паспорта" name="passportNumber">
+                    <div class="sex">
+                        <label>
+                            <input type="radio" placeholder="Пол" value="male" name="gender" checked>
+                            <span>Чоловік<span>
+                        </label>
+                        <label>
+                            <input type="radio" placeholder="Пол" value="female" name="gender">
+                            <span>Жінка<span>
+                        </label>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="Прізвище" name="surname">
+                        <input type="text" placeholder="Дата народження" name="dateOfBirth" required>
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Ім'я" name="name">
+                        <input type="text" placeholder="Громадянство" name="citizenship" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="По батькові" name="middleName">
+                        <input type="text" placeholder="Документ" name="document" required>
                     </div>
                     <div class="field">
-                        <input type="text" placeholder="Дійсний до" name="valid">
+                        <input type="number" placeholder="Номер паспорта" name="passportNumber" required>
                     </div>
                 </div>
-                <div class="contact_information_reg_btn_two"><a id="href" href="payment"><button type="submit">Далі</button></a></div>
+                <div class="contact_information_reg_fields_row">
+                    <div class="field">
+                        <input type="text" placeholder="Прізвище" name="surname" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Ім'я" name="name" required>
+                    </div>
+                </div>
+                <div class="contact_information_reg_fields_row">
+                    <div class="field">
+                        <input type="text" placeholder="По батькові" name="middleName" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Дійсний до" name="valid" required>
+                    </div>
+                </div>
+                <div class="contact_information_reg_btn_two"><a id="getFromDB" href="payment"><button type="submit">Далі</button></a></div>
             </form>
             <form id="form" class="contact_information_reg_fields_one" method="POST">
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="email" placeholder="Email" name="email">
+                        <input type="email" placeholder="Email" name="email" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="tel" placeholder="Телефон" name="phoneNumber">
+                        <input type="tel" placeholder="Телефон" name="phoneNumber" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="Країна" name="country">
+                        <input type="text" placeholder="Країна" name="country" required>
+                    </div>
+                </div>
+                <div class="contact_information_reg_fields_row">
+                    <div class="sex">
+                        <label>
+                            <input type="radio" placeholder="Пол" value="male" name="gender" checked>
+                            <span>Чоловік<span>
+                        </label>
+                        <label>
+                            <input type="radio" placeholder="Пол" value="female" name="gender">
+                            <span>Жінка<span>
+                        </label>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="Пол" name="gender">
+                        <input type="text" placeholder="Дата народження" name="dateOfBirth" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="Дата народження" name="dateOfBirth">
+                        <input type="text" placeholder="Громадянство" name="citizenship" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="Громадянство" name="citizenship">
+                        <input type="text" placeholder="Документ" name="document" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="Документ" name="document">
+                        <input type="text" placeholder="Номер паспорта" name="passportNumber" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="Номер паспорта" name="passportNumber">
+                        <input type="text" placeholder="Прізвище" name="surname" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="Прізвище" name="surname">
+                        <input type="text" placeholder="Ім'я" name="name" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="Ім'я" name="name">
+                        <input type="text" placeholder="По батькові" name="middleName" required>
                     </div>
                 </div>
                 <div class="contact_information_reg_fields_row">
                     <div class="field">
-                        <input type="text" placeholder="По батькові" name="middleName">
+                        <input type="text" placeholder="Дійсний до" name="valid" required>
                     </div>
                 </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Дійсний до" name="valid">
-                    </div>
-                </div>
-                <div class="contact_information_reg_btn_one"><a id="href" href="payment"><button type="submit">Далі</button></a></div>
+                <div class="contact_information_reg_btn_one"><a id="getFromDB" href="payment"><button type="submit">Далі</button></a></div>
             </form>
         </div>
     </div>

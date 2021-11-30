@@ -2,6 +2,9 @@
 
 const http = require('http');
 const fs = require('fs');
+// const dbLoginSettings = require('../config/dbLoginSettings.config.json');
+// const { Database } = require('./db/database.js');
+// const database = new Database(dbLoginSettings);
 
 const mime = {
   'html': 'text/html',
@@ -22,10 +25,45 @@ const routing = {
   '/book': '/src/book.html',
 }
 
+// const receiveArgs = async (req) => {
+//   const buffers = [];
+//   for await (const chunk of req) buffers.push(chunk);
+//   const data = Buffer.concat(buffers).toString();
+//   return JSON.parse(data);
+// };
+
+// const httpError = (res, status, message) => {
+//   res.statusCode = status;
+//   res.end(`"${message}"`);
+// };
+
+
 class Server {
   _dbRequests = {
     //put here get requests to db
     //EXAMPLE: '/allBanks': (res) => this.getAllBanks(res),
+
+    // 'getFromDB' : async (req, res) => {
+    //   const con = await database.createConnection();
+    //   con.connect( async (err) => {
+    //     if (err) throw err;
+    //     const args = await receiveArgs(req);
+    //     try {
+    //       const values = Object.values(args);
+    //       const data = await database.getFlightsByParams(...values);
+    //       if (!data) {
+    //         httpError(res, 500, 'Server error');
+    //         return;
+    //       }
+    //       con.destroy();
+    //       res.end(JSON.stringify(data));
+    //     } catch (err) {
+    //       console.dir({ err });
+    //       httpError(res, 500, 'Server error');
+    //       con.end();
+    //     }
+    //   });
+    // } 
   };
 
   _reqMethods = {
@@ -67,15 +105,16 @@ class Server {
 
   handlePostRequest(req, res) {
     let name = req.url;
+    // const [first, second] = name.substring(1).split('/');
+    // console.log(name.substring(1).split('/'));
     console.log(req.method, name);
     let data = '';
     req.on('error', (err) => console.error(err));
-
+    // this._dbRequests[second](req, res);
     req.on('data', chunk => {
-      console.log(JSON.parse(chunk));
       data += chunk;
     });
-
+  
     req.on('end', async () => {
       //add smth to db
     });
@@ -89,7 +128,7 @@ class Server {
       data += chunk;
     });
 
-    req.on('end', async () => {
+    req.on('end', () => {
       //delete smth from db
     });
   }
