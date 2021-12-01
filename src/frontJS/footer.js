@@ -3,7 +3,7 @@ function styleFooter() {
   footer.innerHTML = `
   <div class="footer-refs-container">
     <div class="logo-container">
-      <div class="logo"><img src="../img/logo/logo.svg" alt="logo"></div>
+      <div class="logo"><img src="../img/logo/logo.png" alt="logo"></div>
       <p>&#169 aviatickets.ua 2010-2021</p>
     </div>
     <div class="info-container">
