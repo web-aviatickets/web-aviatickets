@@ -13,10 +13,13 @@ const buildApi = (methods) => {
                 body : args
               })
               .then(res => {
+                  console.log(res)
                   const { status } = res;
+                  console.log(status);
                   if (status !== 200) {
-                      reject(new Error(`Status Code: ${stauts}`));
+                      reject(new Error(`Status Code: ${status}`));
                   } else {
+                      console.log(res.json)
                       resolve(res.json());
                   }
               })

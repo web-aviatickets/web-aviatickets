@@ -2,9 +2,8 @@
 
 const http = require('http');
 const fs = require('fs');
-// const dbLoginSettings = require('../config/dbLoginSettings.config.json');
-// const { Database } = require('./db/database.js');
-// const database = new Database(dbLoginSettings);
+const dbLoginSettings = require('../config/dbLoginSettings.config.json');
+const { Database } = require('./db/database.js');
 
 const mime = {
   'html': 'text/html',
@@ -76,6 +75,7 @@ class Server {
     this.server = http.createServer();
     this.server.listen(port, () => console.log(`Server listening on port ${port}...`));
     this.server.on('request', (req, res) => this.handleRequest(req, res));
+    this.database = new Database(dbLoginSettings);
   }
 
   handleRequest(req, res) {
@@ -113,9 +113,26 @@ class Server {
     // this._dbRequests[second](req, res);
     req.on('data', chunk => {
       data += chunk;
+      // console.log('data', JSON.parse(chunk));
     });
   
     req.on('end', async () => {
+      console.log('data', JSON.parse(data));
+      if (name === '//getFromDB') {
+        const con = await this.database.createConnection();
+        con.connect( async (err) => {
+          if (err) throw err;
+          await this.database.getFlightsByParams('Париж', 'Пекін', '2021-12-31')
+          .then(response => {
+            res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });
+            res.write(JSON.stringify(response));
+            console.log(JSON.stringify(response))
+            res.end();
+          })
+          .catch(err => console.error(err));
+          con.destroy();
+        });
+      }
       //add smth to db
     });
   }

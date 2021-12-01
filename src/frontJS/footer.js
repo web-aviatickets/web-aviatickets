@@ -34,3 +34,5 @@ function styleFooter() {
   <a class="more-info">Читати повністю&darr;</a>
   `;
 }
+
+styleFooter();
