@@ -58,7 +58,6 @@ form {
 input {
   width: 25%;
   border: none;
-  /*border-radius: 10px 0 0 10px;*/
   height: 8%;
   padding: 0px;
   text-align: center;
@@ -314,6 +313,7 @@ span::before {
   text-align: center;
   color: #000000;
 }
+
 
 @media (max-width: 240px) {
   #form-container {
