@@ -55,13 +55,16 @@ button {
     font-weight: normal;
     font-size: 36px;
     text-align: left;
-    color: rgba(0, 0, 0, 0.4);
+    /* color: rgba(0, 0, 0, 0.4); */
 }
 
 .hidden {
     display: none;
 }
 
+.show {
+    display: block;
+}
 
 /* === LOGO === */
 
@@ -275,12 +278,153 @@ button {
     min-height: 778px;
 }
 
+.ticket_information {
+    padding: 30px 34px 26px 34px;
+    width: auto;
+    min-height: 248px;
+    background-color: #78F398;
+    border-radius: 20px;
+}
+
+.ticket_information_blk_date-time {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.ticket_information_blk_time {
+    width: 46.6%;
+}
+
+.ticket_information_blk_date {
+    width: 46.6%;
+}
+
+.ticket_information_blk_city-duration {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.airports {
+    width: 46.6%;
+    display: flex;
+}
+
+.departure, .arrival {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+.plane {
+    width: 37%;
+}
+
+.plane_img {
+    position: absolute;
+    margin-top: -18px;
+    margin-left: 69px;
+}
+
+.plane img {
+    width: 12%;
+}
+
+.plane .stick {
+    width: 100%;
+    height: 3px;
+    border-radius: 16px;
+    transform: translateY(-50%);
+    background: #5c1b69;
+    margin-top: 15px;
+}
+
+.time_of_flight {
+    width: 27.9%;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.company {
+    width: 25.7%;
+}
+
+.company img {
+    width: 54%;
+}
+
+.ticket_information_blk_addition {
+    display: flex;
+}
+
+.ticket_information_blk_addition-name {
+    display: flex;
+    width: 27.6%;
+    justify-content: space-between;
+}
+
+.ticket_information_blk_addition-race {
+    width: 57%;
+    display: flex;
+    justify-content: right;
+}
+
+/* .ticket_information_blk_addition_price-place {
+    margin-top: 15px;
+    display: flex;
+}
+
+.num_place {
+    margin-left: 10%;
+    
+} */
+.tariff_information_blk {
+    padding: 30px 34px 26px 34px;
+    width: auto;
+    min-height: 248px;
+    background-color: #78F398;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.tariff_information_blk .subhead + div {
+    font-size: 20px;
+}
+
+.tariff_text {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.tariff_information_blk-price-place {
+    display: flex;
+    /* justify-content: space-around; */
+    margin-top: 4%;
+}
+
+.num_price, .num_place {
+    font-size: 20px;
+    font-weight: 600px;
+}
+
+.num_price span, .num_place span{
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 34px;
+    margin-left: 10px;
+}
+.num_place {
+    margin-left: 10%;
+}
+
 .contact_information_reg {
     padding: 30px 34px 26px 34px;
     width: auto;
-    min-height: 576px;
+    min-height: 652px;
     background-color: #78F398;
     border-radius: 20px;
+    margin-top: 50px;
 }
 
 #form {
@@ -312,62 +456,10 @@ button {
     border: 1px solid rgba(0, 0, 0, 0.35);
 }
 
-.sex {
-    width: 34%;
-    height: 100%;
-    display: flex;
-    border: 1px solid rgba(0, 0, 0, 0.35);
-}
-
-.sex label {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    text-align: center;
-    font-size: x-large;
-    overflow: hidden;
-    line-height: 98px;
-}
-
-.sex label input {
-    position: absolute;
-    width: 0;
-    height: 0;
-    padding: 0;
-    left: -100%;
-}
-
-.sex span {
-    width: 100%;
-    height: 120%;
-    color: #000;
-    background: #FFF;
-    display: block;
-    border-color: black; 
-}
-
-.sex label input:checked+span {
-    color: #fff;
-    background: #4a90e2;
-}
-
-/* .sex label input:checked+span {
-    color: #fff;
-    background: #4a90e2;
-}
-.sex label span {
-    width: 100%;
-    display: block;
-    border-radius: 4px;
-} */
-.contact_information_reg_btn, .contact_information_reg_btn_one, .contact_information_reg_btn_two {
+.contact_information_reg_btn {
     display: flex;
     justify-content: center;
     padding-top: 30px;
-}
-
-.contact_information_reg_btn_one, .contact_information_reg_btn_two {
-    display: none;
 }
 
 .contact_information_reg_fields_two {
@@ -476,6 +568,197 @@ button {
 }
 
 /* === Payment Methods === */
+
+/* ===  FORM  === */
+
+.contact_info {
+    margin-bottom: 30px;
+}
+
+.form_info_blk{
+    display: flex;
+    width: 100%;
+    margin: 19px 10px 0 -10px;
+}
+
+.pasengers_data_sex {
+    width: 80%;
+    margin-top: 30px;
+    display: flex;
+}
+
+.pasengers_sex {
+    margin-left: 12px;
+}
+
+.pasengers_data_sex .form_info_blk {
+    width: 100%;
+}
+
+.form_info_blk_data {
+    width: 50%;
+    margin-left: 12px;
+}
+
+.date {
+    width: 10%;
+}
+
+.data_sex {
+    display: block;
+}
+
+.contact label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 18px;
+    font-weight: 400px;
+    line-height: 18px;
+    color: #333333;
+    margin-bottom: 19px;
+}
+
+.form_input, .low {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FAFBFC;
+    border-radius: 8px;
+    border: 1px solid #DDE3EB;
+    border-style: solid;
+} 
+
+.pasengers_data .form_info_blk_data {
+    width: auto;
+}
+
+
+.low {
+    width: 76px;
+}
+
+.low input {
+    flex-shrink: 1;
+    width: 100%;
+    height: 100%;
+    line-height: normal;
+    border: none;
+    min-height: 38px;
+    font-family: inherit;
+    opacity: 1;
+    padding-left: 11px;
+    padding-right: 11px;
+    font-size: 16px;
+    color: #333333;
+    background-color: transparent;
+    border-radius: 8px
+}
+
+.form_input input {
+    flex-shrink: 1;
+    width: 100%;
+    height: 100%;
+    line-height: normal;
+    border: none;
+    min-height: 38px;
+    font-family: inherit;
+    opacity: 1;
+    padding-left: 11px;
+    padding-right: 11px;
+    font-size: 16px;
+    color: #333333;
+    background-color: transparent;
+    border-radius: 8px;
+} 
+
+.radio {
+    display: flex;
+    position: relative;
+    justify-content: stretch;
+    align-items: stretch;
+    overflow: hidden;
+    height: 40px;
+    padding: 4px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px #dde3eb;
+    background: #FAFBFC;
+    margin-top: 20px;
+}
+
+
+input[type="radio"]:checked ~ .radio_text {
+    color: #333333;
+    background-color: #FFFFFF;
+    font-weight: 600;
+    box-shadow: 0px 1px 3px rgb(98 112 139 / 20%);
+}
+
+.radio_check input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.radio_text {
+    width: 130px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    padding: 9px 14px 9px 14px;
+    cursor: pointer;
+    text-align: center;
+    height: 100%;
+    color: #7D89A1;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mounth_container {
+    margin: 3px 0 0;
+    width: 19%;
+    padding: 3px 0;
+    box-shadow: 0px 8px 15px rgb(98 112 139 / 15%);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #FFFFFF;
+    position: absolute;
+}
+
+.mounth {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 10px 0; 
+}
+
+.active {
+    background-color:aquamarine;
+}
+
+.passegers_for_book p {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.contact_info p {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.ticket_information p {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+  /* ===  /FORM  === */
 
 
 @media (max-width: 1440px) {
@@ -641,17 +924,10 @@ button {
         display: block;
     }
 
-    .contact_information_reg_btn_two {
-        display: flex;
-    }
-
     .contact_information_reg_fields_two .contact_information_reg_fields_row .field, .sex {
         width: 50%;
     }
     .contact_information_reg_fields {
-        display: none;
-    }
-    .contact_information_reg_btn {
         display: none;
     }
 }
@@ -662,19 +938,11 @@ button {
         display: block;
     }
 
-    .contact_information_reg_btn_one {
-        display: flex;
-    }
-
     .contact_information_reg_fields_two {
         display: none;
     }
 
-    .contact_information_reg_btn_two {
-        display: none;
-    }
-
-    .contact_information_reg_fields_one .contact_information_reg_fields_row .field,.sex {
+     .contact_information_reg_fields_one .contact_information_reg_fields_row .field,.sex {
         width: 100%;
     }
 
