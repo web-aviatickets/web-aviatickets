@@ -113,7 +113,6 @@ class Server {
     // this._dbRequests[second](req, res);
     req.on('data', chunk => {
       data += chunk;
-      // console.log('data', JSON.parse(chunk));
     });
   
     req.on('end', async () => {
@@ -126,14 +125,12 @@ class Server {
           .then(response => {
             res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });
             res.write(JSON.stringify(response));
-            console.log(JSON.stringify(response))
             res.end();
           })
           .catch(err => console.error(err));
           con.destroy();
         });
       }
-      //add smth to db
     });
   }
 

@@ -6,7 +6,6 @@ class Database {
   constructor(loginSettings) {
     this.loginSettings = loginSettings;
     this.con = null;
-    this.checkSchema();
   }
 
   async createConnection() {
@@ -165,6 +164,14 @@ class Database {
     return data;
   }
 
+  async anyQuery(query) {
+    let data = null;
+    await this.execQueryPromise(query)
+    .catch(err => console.error(err))
+    .then(rows => data = rows);
+    return data;
+  }
+
   async bookTicket(ticketId, customerId) {
     let data = null;
     let success = true;
@@ -192,6 +199,8 @@ class Database {
     .then(rows => id = rows.insertId);
     return id;
   }
+
+  // всі квитки і один
 }
 
 module.exports = { Database };

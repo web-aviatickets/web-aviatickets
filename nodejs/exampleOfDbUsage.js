@@ -5,6 +5,7 @@ const { Database } = require('./db/database.js');
 const database = new Database(dbLoginSettings);
 
 async function example () {
+  await database.checkSchema();
   const con = await database.createConnection();
   con.connect( async (err) => {
     if (err) throw err;
