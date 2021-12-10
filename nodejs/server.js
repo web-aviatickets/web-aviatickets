@@ -2,8 +2,6 @@
 
 const http = require('http');
 const fs = require('fs');
-const dbLoginSettings = require('../config/dbLoginSettings.config.json');
-const { Database } = require('./db/database.js');
 
 const mime = {
   'html': 'text/html',
@@ -75,7 +73,7 @@ class Server {
     this.server = http.createServer();
     this.server.listen(port, () => console.log(`Server listening on port ${port}...`));
     this.server.on('request', (req, res) => this.handleRequest(req, res));
-    this.database = new Database(dbLoginSettings);
+    //this.database = new Database(dbLoginSettings);
   }
 
   handleRequest(req, res) {

@@ -22,199 +22,206 @@
 <section class="wrapper-outer contact_information">
     <div class="wrapper-inner">
         <h1>КОНТАКТНА ІНФОРМАЦІЯ ДЛЯ ЗАМОВЛЕННЯ</h1>
+
+
+        <div class="ticket_information"> 
+            <h4 class="subhead">Деталі перельоту</h4>
+            <p>Час вильоту та прильоту місцевий</p>
+            <div class="ticket_information_blk">
+                <div class="ticket_information_blk_date-time">
+                    <div class="ticket_information_blk_date">18 грудня, субота</div>
+                    <div class="ticket_information_blk_time">16 г 10 хв</div>
+                </div>
+                <div class="ticket_information_blk_city-duration">
+                    <div class="airports">
+                        <div class="departure">17:05</div>
+                        <div class="plane">
+                            <div class="stick"></div>
+                            <div class="plane_img">
+                                <img src="../img/icons/Icons8-Windows-8-Transport-Airplane-Mode-On.ico" alt="plane">
+                            </div>
+                        </div>
+                        <div class="arrival">19:00</div>
+                    </div>
+                    <div class="time_of_flight">
+                        16 г 10 хв
+                    </div>
+                    <div class="company">
+                        <img src="../img/windrose.png" alt="company">
+                    </div>
+                </div>
+                <div class="ticket_information_blk_addition">
+                    <div class="ticket_information_blk_addition-name">
+                        <div class="city_name_from">Франція, Париж</div>
+                        <div class="city_name_to">Китай, Пекін</div>
+                    </div>
+                    <div class="ticket_information_blk_addition-race">
+                        <div class="race_to">Рейс 7W101</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tariff_information_blk">
+            <h4 class="subhead">Ваш тариф</h4>
+            <div>Переліт: <span class="tariff_text">Париж</span>-<span class="tariff_text">Пекін</span></div>
+            <div class="tariff_information_blk-price-place">
+                <div class="num_price">Ціна квитка: <span>450</span> грн</div>
+                <div class="num_place">Номер посадкового місця: <span>45</span></div>
+            </div>
+        </div>
+
         <div class="contact_information_reg">
-            <div class="subhead">Данні для оформленяя квитку:</div>
-            <form id="form" class="contact_information_reg_fields" method="POST">
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input id="top_left_radius" type="email" placeholder="Email" name="email" required>
-                    </div>
-                    <div class="field">
-                        <input type="tel" placeholder="Телефон" name="phoneNumber" required>
-                    </div>
-                    <div class="field">
-                        <input id="top_right_radius" type="text" placeholder="Країна" name="country" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="sex">
-                        <label>
-                            <input type="radio" placeholder="Пол" value="male" name="gender" checked>
-                            <span>Чоловік<span>
-                        </label>
-                        <label>
-                            <input type="radio" placeholder="Пол" value="female" name="gender">
-                            <span>Жінка<span>
-                        </label>
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="Дата народження" name="dateOfBirth" required>
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="Громадянство" name="citizenship" required>
+            <form id="form" method="post">
+                <div class="contact_info">
+                    <h4 class="subhead">Контактная информация</h4>
+                    <p>На пошту ми відправимо квиток, надішлемо повідомлення про зміни в рейсі або у разі інших екстрених ситуацій</p>
+                    <div class="form_info_blk">
+                        <div class="form_info_blk_data">
+                            <div class="form_info_container">
+                                <div class="contact">
+                                    <label>Електрона пошта</label>
+                                    <div class="form_input">
+                                        <input type="email" placeholder="Email" name="email" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_info_blk_data">
+                            <div class="form_info_container">
+                                <div class="contact">
+                                    <label>Телефон</label>
+                                    <div class="form_input">
+                                        <input type="tel" placeholder="Телефон" name="tel" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Документ" name="document" required>
-                    </div>
-                    <div class="field">
-                        <input type="number" placeholder="Номер паспорта" name="passportNumber" required>
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="Дійсний до" name="valid" required>
+                <div class="passegers_for_book">
+                    <h4 class="subhead">Пасажири для броні</h4>
+                    <p>Введіть особисті дані, як зазначено в документі, за яким ви полетите.</p>
+                    <div class="form_info_blk">
+                        <div class="form_info_blk_data">
+                            <div class="form_info_container">
+                                <div class="contact">
+                                    <label>Прізвище</label>
+                                    <div class="form_input">
+                                        <input type="text" placeholder="Прізвище" name="surname" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_info_blk_data">
+                            <div class="form_info_container">
+                                <div class="contact">
+                                    <label>Ім'я</label>
+                                    <div class="form_input">
+                                        <input type="tel" placeholder="Ім'я" name="name" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input id="bottom_left_radius" type="text" placeholder="Прізвище" name="surname" required>
+                <div class="pasengers_data_sex">
+                    <div class="pasengers_data">
+                        <label>Дата народження</label>
+                        <div class="form_info_blk">
+                            <div class="form_info_blk_data">
+                                <div class="form_info_container">
+                                    <div class="contact">
+                                        <div class="low">
+                                            <input type="number" placeholder="День" name="day" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form_info_blk_data">
+                                <div class="form_info_container">
+                                    <div class="contact">
+                                        <div class="form_input">
+                                            <input id="input_mounth" type="text" placeholder="Місяць" name="mounth" required>
+                                            <div class="select_mounth">
+                                                <div id="arrow">
+                                                    <div class="arr">
+                                                        <img src="../img/icons/baseline_expand_more_black_24dp.png" alt="arrow">
+                                                    </div>
+                                                    <div class="arr hidden">
+                                                        <img src="../img/icons/baseline_expand_less_black_24dp.png" alt="arrow">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mounth_container hidden">
+                                        <div class="mounth white">Січень</div>
+                                        <div class="mounth white">Лютий</div>
+                                        <div class="mounth white">Березень</div>
+                                        <div class="mounth white">Квітень</div>
+                                        <div class="mounth white">Травень</div>
+                                        <div class="mounth white">Червень</div>
+                                        <div class="mounth white">Липинь</div>
+                                        <div class="mounth white">Серпень</div>
+                                        <div class="mounth white">Вересень</div>
+                                        <div class="mounth white">Жовтень</div>
+                                        <div class="mounth white">Листопад</div>
+                                        <div class="mounth white">Грудень</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form_info_blk_data">
+                                <div class="form_info_container">
+                                    <div class="contact">
+                                        <div class="low">
+                                            <input type="number" placeholder="Рік" name="year" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="form_info_blk_data">
+                                <div class="form_info_container">
+                                    <div class="contact">
+                                        <div class="form_input">
+                                            <input type="date" placeholder="День" name="date" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                        </div>
                     </div>
-                    <div class="field">
-                        <input type="text" placeholder="Ім'я" name="name" required>
-                    </div>
-                    <div class="field">
-                        <input id="bottom_right_radius" type="text" placeholder="По батькові" name="middleName" required>
+                    <div class="pasengers_sex">
+                        <label>Пол</label>
+                        <div class="radio">
+                            <div class="radio_check">
+                                <label>
+                                    <input type="radio" placeholder="Пол" value="male" name="gender" checked>
+                                    <div class="radio_text">Чоловік</div>
+                                </label>
+                            </div>
+                            <div class="radio_check">
+                                <label>
+                                    <input type="radio" placeholder="Пол" value="female" name="gender">
+                                    <div class="radio_text">Жінка</div>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="contact_information_reg_btn"><a id="getFromDB" href="payment"><button type="submit">Далі</button></a></div>
-            </form>
-            <form id="form" class="contact_information_reg_fields_two" method="POST">
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="email" placeholder="Email" name="email" required>
-                    </div>
-                    <div class="field">
-                        <input type="tel" placeholder="Телефон" name="phoneNumber" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Країна" name="country" required>
-                    </div>
-                    <div class="sex">
-                        <label>
-                            <input type="radio" placeholder="Пол" value="male" name="gender" checked>
-                            <span>Чоловік<span>
-                        </label>
-                        <label>
-                            <input type="radio" placeholder="Пол" value="female" name="gender">
-                            <span>Жінка<span>
-                        </label>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Дата народження" name="dateOfBirth" required>
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="Громадянство" name="citizenship" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Документ" name="document" required>
-                    </div>
-                    <div class="field">
-                        <input type="number" placeholder="Номер паспорта" name="passportNumber" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Прізвище" name="surname" required>
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="Ім'я" name="name" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="По батькові" name="middleName" required>
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="Дійсний до" name="valid" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_btn_two"><a id="getFromDB" href="payment"><button type="submit">Далі</button></a></div>
-            </form>
-            <form id="form" class="contact_information_reg_fields_one" method="POST">
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="email" placeholder="Email" name="email" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="tel" placeholder="Телефон" name="phoneNumber" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Країна" name="country" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="sex">
-                        <label>
-                            <input type="radio" placeholder="Пол" value="male" name="gender" checked>
-                            <span>Чоловік<span>
-                        </label>
-                        <label>
-                            <input type="radio" placeholder="Пол" value="female" name="gender">
-                            <span>Жінка<span>
-                        </label>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Дата народження" name="dateOfBirth" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Громадянство" name="citizenship" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Документ" name="document" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Номер паспорта" name="passportNumber" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Прізвище" name="surname" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Ім'я" name="name" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="По батькові" name="middleName" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_fields_row">
-                    <div class="field">
-                        <input type="text" placeholder="Дійсний до" name="valid" required>
-                    </div>
-                </div>
-                <div class="contact_information_reg_btn_one"><a id="getFromDB" href="payment"><button type="submit">Далі</button></a></div>
             </form>
         </div>
     </div>
 </section>
 
 <!-- /section Contact Information -->
-     <!-- Footer -->
 
-     <footer></footer>
+<!-- Footer -->
 
-     <!-- /Footer -->
+<footer></footer>
+
+<!-- /Footer -->
  </body>
  </html>
