@@ -2,6 +2,12 @@
 
 const http = require('http');
 const fs = require('fs');
+const dbLoginSettings = require('../config/dbLoginSettings.config.json');
+const { Database } = require('./db/database.js');
+const database = new Database(dbLoginSettings);
+const Client = require('./session/client.js');
+const Session = require('./session/session.js');
+
 
 const mime = {
   'html': 'text/html',
@@ -73,7 +79,7 @@ class Server {
     this.server = http.createServer();
     this.server.listen(port, () => console.log(`Server listening on port ${port}...`));
     this.server.on('request', (req, res) => this.handleRequest(req, res));
-    //this.database = new Database(dbLoginSettings);
+    this.database = new Database(dbLoginSettings);
   }
 
   handleRequest(req, res) {
@@ -81,7 +87,10 @@ class Server {
     if (reqMethod) reqMethod(req, res);
   }
 
-  handleGetRequest(req, res) {
+   async handleGetRequest(req, res) {
+    // const client = await Client.getInstance(req, res);
+    // const { method, url, headers } = req;
+    // console.log(`${method} ${url} ${headers.cookie}`);
     let name = req.url;
     console.log(req.method, name);
     if (routing[name]) name = routing[name];
