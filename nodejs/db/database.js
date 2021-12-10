@@ -36,7 +36,6 @@ class Database {
       from_place int NOT NULL,
       where_place int NOT NULL,
       flight_duration time,
-      ticket_price int unsigned,
       CONSTRAINT fk_flights_on_places
       FOREIGN KEY (from_place)
       REFERENCES places(place_id),
@@ -49,6 +48,7 @@ class Database {
       ticket_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
       flight_id int NOT NULL,
       seat_number int NOT NULL,
+      ticket_price int unsigned,
       taken boolean,
       CONSTRAINT fk_tickets_on_flights
       FOREIGN KEY (flight_id)
@@ -62,7 +62,9 @@ class Database {
       phone_number varchar(10),
       country varchar(20),
       gender varchar(6),
-      date_of_birth varchar(30),
+      day varchar(30),
+      month varchar(30),
+      year varchar(30),
       citizenship varchar(30),
       document varchar(30),
       passport_number int,
@@ -111,7 +113,7 @@ class Database {
 
   async getFlightsByParams(from, to, date) {
     let data = null;
-    const query = `SELECT flights.flight_id, flights.flight_name, flights.flight_date, p1.place_name "from", p2.place_name "to", flights.flight_duration, flights.ticket_price
+    const query = `SELECT flights.flight_id, flights.flight_name, flights.flight_date, p1.place_name "from", p2.place_name "to", flights.flight_duration
                    FROM flights 
                    INNER JOIN places p1
                    ON p1.place_id = flights.from_place
@@ -128,7 +130,7 @@ class Database {
 
   async getFlightById(id) {
     let data = null;
-    const query = `SELECT flights.flight_id, flights.flight_name, flights.flight_date, p1.place_name "from", p2.place_name "to", flights.flight_duration, flights.ticket_price
+    const query = `SELECT flights.flight_id, flights.flight_name, flights.flight_date, p1.place_name "from", p2.place_name "to", flights.flight_duration
                    FROM flights
                    INNER JOIN places p1
                    ON p1.place_id = flights.from_place
@@ -200,7 +202,16 @@ class Database {
     return id;
   }
 
-  // всі квитки і один
+  async getAllBookedTickets() {
+    let data = null;
+    const query = `SELECT booked_tickets.* 
+                   FROM booked_tickets`;
+    await this.execQueryPromise(query)
+    .catch(err => console.error(err))
+    .then(rows => data = rows);
+    return data;
+  }
+
 }
 
 module.exports = { Database };
