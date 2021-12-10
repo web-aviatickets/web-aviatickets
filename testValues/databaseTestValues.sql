@@ -152,7 +152,7 @@ INSERT INTO tickets(flight_id, seat_number, taken, ticket_price)
 VALUES('5', '7', false, 300);
 INSERT INTO tickets(flight_id, seat_number, taken, ticket_price)
 VALUES('5', '8', false, 500);
-INSERT INTO tickets(flight_id, sea, 600t_number, taken, ticket_price)
+INSERT INTO tickets(flight_id, seat_number, taken, ticket_price)
 VALUES('5', '9', false, 300);
 INSERT INTO tickets(flight_id, seat_number, taken, ticket_price)
 VALUES('5', '10', false, 500);
@@ -173,7 +173,7 @@ INSERT INTO tickets(flight_id, seat_number, taken, ticket_price)
 VALUES('6', '5', false, 400);
 INSERT INTO tickets(flight_id, seat_number, taken, ticket_price)
 VALUES('6', '6', false, 400);
-INSERT INTO tickets(flight_id, s, 500eat_number, taken, ticket_price)
+INSERT INTO tickets(flight_id, seat_number, taken, ticket_price)
 VALUES('6', '7', false, 400);
 INSERT INTO tickets(flight_id, seat_number, taken, ticket_price)
 VALUES('6', '8', false, 400);
