@@ -5,8 +5,6 @@ const mounths = document.querySelector('.mounth_container');
 const inpMounth = document.getElementById('input_mounth');
 const arrows = document.querySelector('.pasengers_data');
 
-console.log(document.cookie.path);
-
 const buildApi = (methods) => {
     const api = {};
     for (const method of methods) {
@@ -43,11 +41,12 @@ form.addEventListener('submit', e => {
     const json = JSON.stringify(Object.fromEntries(formData.entries()));
     api[method](json)
         .then(data => {
-            document.cookie = "user=Jhon; path=/;";
+            document.cookie = 'Jhio=dsf'
             console.log(data, document.cookie);
             window.location.href = `${pathTo}`
             return;
         });
+       //.then(window.location.href = `${pathTo}`);
 
 });
 

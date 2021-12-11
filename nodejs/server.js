@@ -5,8 +5,6 @@ const fs = require('fs');
 const dbLoginSettings = require('../config/dbLoginSettings.config.json');
 const { Database } = require('./db/database.js');
 const database = new Database(dbLoginSettings);
-const Client = require('./session/client.js');
-const Session = require('./session/session.js');
 
 
 const mime = {
@@ -27,6 +25,8 @@ const routing = {
   '/payment': '/src/payment.html',
   '/book': '/src/book.html',
 }
+
+
 
 // const receiveArgs = async (req) => {
 //   const buffers = [];
@@ -88,9 +88,6 @@ class Server {
   }
 
    async handleGetRequest(req, res) {
-    // const client = await Client.getInstance(req, res);
-    // const { method, url, headers } = req;
-    // console.log(`${method} ${url} ${headers.cookie}`);
     let name = req.url;
     console.log(req.method, name);
     if (routing[name]) name = routing[name];
