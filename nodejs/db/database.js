@@ -244,8 +244,8 @@ class Database {
     }
     placeIds.push(rows[0].place_id);
     query = `SELECT *
-                  FROM places
-                  WHERE place_name = '${toPlaceName}'`;
+             FROM places
+             WHERE place_name = '${toPlaceName}'`;
     rows = await this.execQueryPromise(query).catch(err => console.error(err));
     if (rows.length <= 0) {
       await this.createNewPlace(toPlaceName)
@@ -261,7 +261,7 @@ class Database {
     const flightId = data.insertId;
     for (let i = 1; i <= 56; i++) {
       const price = i > 28 ? defaultPrice1 : defaultPrice2;
-      await this.createNewSeat(flightId, i, price).catch(err => console.error(err));;
+      await this.createNewSeat(flightId, i, price).catch(err => console.error(err));
     }
     return data;
   }

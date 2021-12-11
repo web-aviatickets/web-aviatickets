@@ -9,12 +9,16 @@ async function example () {
   const con = await database.createConnection();
   con.connect( async (err) => {
     if (err) throw err;
-    await database.anyQuery('SELECT * FROM tickets')
-    .then(res => console.log(res))
+    // get all free seats of many flights by params
+    let flightIds = [];
+    await database.getFlightsByParams('Париж', 'Пекін', '2021-12-31')
+    .then(results => results.forEach(res => flightIds.push(res.flight_id)))
     .catch(err => console.error(err));
-    await database.anyQuery('SELECT * FROM flights')
-    .then(res => console.log(res))
-    .catch(err => console.error(err));
+    for (let id of flightIds) {
+      await database.getAllSeats(id)
+      .then(res => console.log(res))
+      .catch(err => console.error(err));
+    }
     con.destroy();
   });
 }
