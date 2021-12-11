@@ -9,7 +9,10 @@ async function example () {
   const con = await database.createConnection();
   con.connect( async (err) => {
     if (err) throw err;
-    await database.getFlightsByParams('Париж', 'Пекін', '2021-12-31')
+    await database.anyQuery('SELECT * FROM tickets')
+    .then(res => console.log(res))
+    .catch(err => console.error(err));
+    await database.anyQuery('SELECT * FROM flights')
     .then(res => console.log(res))
     .catch(err => console.error(err));
     con.destroy();

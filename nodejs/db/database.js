@@ -212,6 +212,60 @@ class Database {
     return data;
   }
 
+  async createNewPlace(place) {
+    let data = null;
+    const query = `INSERT INTO places(place_name) VALUES('${place}')`;
+    await this.execQueryPromise(query)
+    .catch(err => console.error(err))
+    .then(rows => data = rows);
+    return data;
+  }
+
+  async createNewSeat(flightId, seatNumber, seatPrice) {
+    let data = null;
+    const query = `INSERT INTO tickets(flight_id, seat_number, taken, ticket_price)
+                   VALUES(${flightId}, ${seatNumber}, false, ${seatPrice})`;
+    await this.execQueryPromise(query)
+    .catch(err => console.error(err))
+    .then(rows => data = rows);
+    return data;
+  }
+
+  async createNewFlight(flightName, flightDate, fromPlaceName, toPlaceName, flightDuration, defaultPrice1, defaultPrice2) {
+    let data = null;
+    const placeIds = [];
+    let query = `SELECT *
+                  FROM places
+                  WHERE place_name = '${fromPlaceName}'`;
+    let rows = await this.execQueryPromise(query).catch(err => console.error(err));
+    if (rows.length <= 0) {
+      await this.createNewPlace(fromPlaceName)
+      .then(rows2 => rows = [{place_id: rows2.insertId}]);
+    }
+    placeIds.push(rows[0].place_id);
+    query = `SELECT *
+                  FROM places
+                  WHERE place_name = '${toPlaceName}'`;
+    rows = await this.execQueryPromise(query).catch(err => console.error(err));
+    if (rows.length <= 0) {
+      await this.createNewPlace(toPlaceName)
+      .then(rows2 => rows = [{place_id: rows2.insertId}]);
+    }
+    placeIds.push(rows[0].place_id);
+    query = `INSERT INTO flights(flight_name, flight_date, from_place, where_place, flight_duration)
+             VALUES('${flightName}', '${flightDate}', '${placeIds[0]}', '${placeIds[1]}', '${flightDuration}')`;
+    await this.execQueryPromise(query)
+    .catch(err => console.error(err))
+    .then(rows => data = rows);
+    if (data.affectedRows != 1) return data;
+    const flightId = data.insertId;
+    for (let i = 1; i <= 56; i++) {
+      const price = i > 28 ? defaultPrice1 : defaultPrice2;
+      await this.createNewSeat(flightId, i, price).catch(err => console.error(err));;
+    }
+    return data;
+  }
+
 }
 
 module.exports = { Database };
