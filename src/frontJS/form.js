@@ -1,9 +1,11 @@
+const {getCookie, setCookie} = required('./cookies.js');
+
 const form = document.getElementById('form');
 const href = document.getElementById('getFromDB');
 const path = window.location.pathname;
-const mounths = document.querySelector('.mounth_container');
-const inpMounth = document.getElementById('input_mounth');
-const arrows = document.querySelector('.pasengers_data');
+// const mounths = document.querySelector('.mounth_container');
+// const inpMounth = document.getElementById('input_mounth');
+// const arrows = document.querySelector('.pasengers_data');
 
 const buildApi = (methods) => {
     const api = {};
@@ -41,34 +43,10 @@ form.addEventListener('submit', e => {
     const json = JSON.stringify(Object.fromEntries(formData.entries()));
     api[method](json)
         .then(data => {
-            document.cookie = 'Jhio=dsf'
-            console.log(data, document.cookie);
-            window.location.href = `${pathTo}`
-            return;
+            data.forEach(({flight_date, flight_duration, flight_id, flight_name, from, to}) => {
+                setCookie('flight_info', JSON.stringify([...data]));
+                getCookie('flight_info');
+            })
+           window.location.href = `${pathTo}`;
         });
-       //.then(window.location.href = `${pathTo}`);
-
 });
-
-// arrows.addEventListener('click', e => {
-//     e.preventDefault();
-//     const arrow = e.target.closest('.arr');
-//     const nextArrow = arrow.nextElementSibling;
-//     const previousArrow = arrow.previousElementSibling;
-//     if (nextArrow) {
-//         nextArrow.classList.remove('hidden');
-//         arrow.classList.add('hidden');
-//     } else {
-//         previousArrow.classList.remove('hidden');
-//         arrow.classList.add('hidden');
-//     }
-//     mounths.classList.toggle('hidden');
-// });
-
-// mounths.addEventListener('click', e => {
-//     e.preventDefault();
-//     const mounth = e.target.closest('.mounth');
-//     const text = mounth.textContent;
-//     inpMounth.value = text;
-//     mounths.classList.add('hidden');
-// });
