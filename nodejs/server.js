@@ -29,17 +29,17 @@ const routing = {
 
 
 
-// const receiveArgs = async (req) => {
-//   const buffers = [];
-//   for await (const chunk of req) buffers.push(chunk);
-//   const data = Buffer.concat(buffers).toString();
-//   return JSON.parse(data);
-// };
+const receiveArgs = async (req) => {
+  const buffers = [];
+  for await (const chunk of req) buffers.push(chunk);
+  const data = Buffer.concat(buffers).toString();
+  return JSON.parse(data);
+};
 
-// const httpError = (res, status, message) => {
-//   res.statusCode = status;
-//   res.end(`"${message}"`);
-// };
+const httpError = (res, status, message) => {
+  res.statusCode = status;
+  res.end(`"${message}"`);
+};
 
 
 class Server {
@@ -142,17 +142,34 @@ class Server {
   
     req.on('end', async () => {
       if (name === '//getFromDB') {
+        const arr = [];
         const con = await this.database.createConnection();
         con.connect( async (err) => {
           if (err) throw err;
-          await this.database.getFlightsByParams('Париж', 'Пекін', '2021-12-31')
-          .then(response => {
-            res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });
-            res.write(JSON.stringify(response));
-            res.end();
-          })
-          .catch(err => console.error(err));
-          con.destroy();
+          try {
+            const args = JSON.parse(data);
+            console.log(args);
+            const values = Object.values(args);
+            console.log(values);
+            const newData = await this.database.getFlightsByParams(...values);
+            for (const index in newData) {
+              const id = newData[index]['flight_id'];
+              const seats = await this.database.getAllSeats(id);
+              const price = seats[0]['ticket_price'];
+              newData[index]['ticket_price'] = price;
+            }
+            
+            if (!newData) {
+              httpError(res, 500, 'Server error');
+              return;
+            }
+            con.destroy();
+            res.end(JSON.stringify(newData));
+          } catch (err) {
+            console.dir({ err });
+            httpError(res, 500, 'Server error');
+            con.end();
+          }
         });
       } else if (name === '/createFlight') {
         const reg = new RegExp('name="[a-zA-Z]*"[\r\n]+.*', 'g');

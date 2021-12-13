@@ -107,7 +107,7 @@ header .logo {
   height: 100%;
 }
 
-section > h2 {
+h2 {
   font-weight: 500;
   width: 80%;
   text-align: center;
