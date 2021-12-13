@@ -24,6 +24,7 @@ const routing = {
   '/contactInfo': '/src/contact_info.html',
   '/payment': '/src/payment.html',
   '/book': '/src/book.html',
+  '/admin': '/src/admin.html'
 }
 
 
@@ -95,6 +96,26 @@ class Server {
       this._dbRequests[name](res);
       return;
     }
+    if (name === '/getAllFlights') {
+      const con = await this.database.createConnection();
+      con.connect( async (err) => {
+        if (err) throw err;
+        await this.database.anyQuery(`SELECT f.flight_name, f.flight_id, f.flight_duration, f.flight_date, p.place_name AS "from", p1.place_name AS "to"
+                                      FROM flights f
+                                      INNER JOIN places p 
+                                      ON p.place_id = f.from_place
+                                      INNER JOIN places p1
+                                      ON p1.place_id = f.where_place;`)
+        .then(response => {
+          res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });
+          res.write(JSON.stringify(response));
+          res.end();
+        })
+        .catch(err => console.error(err));
+        con.destroy();
+      });
+      return;
+    }
     const extention = name.split('.')[1];
     const typeAns = mime[extention];
     fs.readFile('.' + name, (err, data) => {
@@ -120,12 +141,68 @@ class Server {
     });
   
     req.on('end', async () => {
-      console.log('data', JSON.parse(data));
       if (name === '//getFromDB') {
         const con = await this.database.createConnection();
         con.connect( async (err) => {
           if (err) throw err;
           await this.database.getFlightsByParams('Париж', 'Пекін', '2021-12-31')
+          .then(response => {
+            res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });
+            res.write(JSON.stringify(response));
+            res.end();
+          })
+          .catch(err => console.error(err));
+          con.destroy();
+        });
+      } else if (name === '/createFlight') {
+        const reg = new RegExp('name="[a-zA-Z]*"[\r\n]+.*', 'g');
+        const params = data.match(reg);
+        const vars = {};
+        for (const param of params) {
+          const arr = param.split('"');
+          vars[arr[1]] = arr[2].replace(/[\r\n]+/g,'');
+        }
+        const con = await this.database.createConnection();
+        con.connect( async (err) => {
+          if (err) throw err;
+          await this.database.createNewFlight(vars.flightName, vars.datetime, vars.from, vars.to, vars.duration, vars.lowerCost, vars.higherCost)
+          .then(response => {
+            console.log(response);
+            res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });
+            res.write(JSON.stringify(response));
+            res.end();
+          })
+          .catch(err => console.error(err));
+          con.destroy();
+        });
+      } else if (name === '/updateFlight') {
+        const reg = new RegExp('name="[a-zA-Z]*"[\r\n]+.*', 'g');
+        const params = data.match(reg);
+        const vars = {};
+        for (const param of params) {
+          const arr = param.split('"');
+          vars[arr[1]] = arr[2].replace(/[\r\n]+/g,'');
+        }
+        const con = await this.database.createConnection();
+        con.connect( async (err) => {
+          if (err) throw err;
+          await this.database.updateFlight(vars.flightName, vars.datetime, vars.from, vars.to, vars.duration, vars.flightId)
+          .then(response => {
+            console.log(response);
+            res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });
+            res.write(JSON.stringify(response));
+            res.end();
+          })
+          .catch(err => console.error(err));
+          con.destroy();
+        });
+      } else if (name === '/deleteFlightById') {
+        const id = JSON.parse(data);
+        console.log(id);
+        const con = await this.database.createConnection();
+        con.connect( async (err) => {
+          if (err) throw err;
+          await this.database.deleteFlightById(id)
           .then(response => {
             res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });
             res.write(JSON.stringify(response));

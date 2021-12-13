@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title>Admin | Web Aviatickets</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="description"  content="Купити авіаквитки онлайн, легко і зручно. Оберіть свій найкращий рейс!">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/footer.css">
+    <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
+    <script src="src/frontJS/admin.js" defer></script>
+    <meta http-equiv="Content-Type" content="Content-Type: text/html; charset=ISO-8859-1"/>
+  </head>
+  <body style="background: #00988E;">
+    <header>
+      <div class="logo"><img src="../img/logo/logo.png" alt="Лого Авіаквитки"></div>
+    </header>
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+    <h1 style="cursor:pointer" onclick="document.getElementById('create').style.display==='block' ? document.getElementById('create').style.display='none' : document.getElementById('create').style.display='block'">Додати рейс</h1>
+    <form class="admin" style="display:none" id="create" action="/createFlight" method="post" accept-charset="UTF-8" target="dummyframe" enctype="multipart/form-data">
+      <ul>
+        <li>
+          <label for="name">Назва рейсу:</label>
+          <input type="text" id="name" name="flightName" value="Рейс 1" required>
+        </li>
+        <li>
+          <label for="from">Звідки:</label>
+          <input type="text" id="from" name="from" value="Рим" required>
+        </li>
+        <li>
+          <label for="to">Куди:</label>
+          <input type="text" id="to" name="to" value="Тернопіль" required>
+        </li>
+        <li>
+          <label for="datetime">Час вильоту:</label>
+          <input type="datetime-local" id="datetime" value="2021-12-08T11:08" name="datetime" required>
+        </li>
+        <li>
+          <label for="duration">Тривалість польоту:</label>
+          <input type="time" id="duration" name="duration" value="11:11" required>
+        </li>
+        <li>
+          <label for="lowerCost">Дешевші квитки:</label>
+          <input type="number" id="lowerCost" name="lowerCost" value="500" required>
+        </li>
+        <li>
+          <label for="higherCost">Дорожчі квитки:</label>
+          <input type="number" id="higherCost" name="higherCost" value="800" required>
+        </li>
+        <input type="reset" value="Очистити">
+        <button id="create-btn" type="button">Створити новий рейс</button>
+      </ul>
+    </form>
+    <h1 style="cursor:pointer" id="update-flight">Змінити рейс</h1>
+    <ul class="admin" style="display:none; cursor:pointer" id="flights"></ul>
+    <form class="admin" style="display:none; cursor:pointer" id="update" action="/updateFlight" method="post" accept-charset="UTF-8" target="dummyframe" enctype="multipart/form-data">
+      <ul>
+        <input type="hidden" id="flight-id" name="flightId">
+        <li>
+          <label for="name-to-update">Назва рейсу:</label>
+          <input type="text" id="name-to-update" name="flightName" value="Рейс 1" required>
+        </li>
+        <li>
+          <label for="from-to-update">Звідки:</label>
+          <input type="text" id="from-to-update" name="from" value="Рим" required>
+        </li>
+        <li>
+          <label for="to-to-update">Куди:</label>
+          <input type="text" id="to-to-update" name="to" value="Тернопіль" required>
+        </li>
+        <li>
+          <label for="datetime-to-update">Час вильоту:</label>
+          <input type="datetime-local" id="datetime-to-update" value="2021-12-08T11:08" name="datetime" required>
+        </li>
+        <li>
+          <label for="duration-to-update">Тривалість польоту:</label>
+          <input type="time" id="duration-to-update" name="duration" value="11:11" required>
+        </li>
+        <!-- <li>
+          <label for="lowerCost-to-update">Дешевші квитки:</label>
+          <input type="number" id="lowerCost-to-update" name="lowerCost" value="500" required>
+        </li>
+        <li>
+          <label for="higherCost-to-update">Дорожчі квитки:</label>
+          <input type="number" id="higherCost-to-update" name="higherCost" value="800" required>
+        </li> -->
+        <input type="reset" value="Очистити">
+        <button type="button" id="update-btn">Змінити рейс</button>
+      </ul>
+    </form>
+    <h1 style="cursor:pointer" id="delete-flight">Видалити рейс</h1>
+    <ul class="admin" style="display:none; cursor:pointer" id="delete-flights"></ul>
+  </body>
+</html>

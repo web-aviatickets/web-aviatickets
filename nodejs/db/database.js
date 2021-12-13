@@ -266,6 +266,61 @@ class Database {
     return data;
   }
 
+  async updateFlight(flightName, flightDate, fromPlaceName, toPlaceName, flightDuration, flightId) {
+    let data = null;
+    const placeIds = [];
+    let query = `SELECT *
+                  FROM places
+                  WHERE place_name = '${fromPlaceName}'`;
+    let rows = await this.execQueryPromise(query).catch(err => console.error(err));
+    if (rows.length <= 0) {
+      await this.createNewPlace(fromPlaceName)
+      .then(rows2 => rows = [{place_id: rows2.insertId}]);
+    }
+    placeIds.push(rows[0].place_id);
+    query = `SELECT *
+             FROM places
+             WHERE place_name = '${toPlaceName}'`;
+    rows = await this.execQueryPromise(query).catch(err => console.error(err));
+    if (rows.length <= 0) {
+      await this.createNewPlace(toPlaceName)
+      .then(rows2 => rows = [{place_id: rows2.insertId}]);
+    }
+    placeIds.push(rows[0].place_id);
+    query = `UPDATE flights 
+             SET flight_name='${flightName}',
+             flight_duration='${flightDuration}',
+             flight_date='${flightDate}',
+             from_place='${placeIds[0]}',
+             where_place='${placeIds[1]}'
+             WHERE flight_id='${flightId}'`;
+    await this.execQueryPromise(query)
+    .catch(err => console.error(err))
+    .then(rows => data = rows);
+    return data;
+  }
+
+  async deleteFlightById(id) {
+    let data = null;
+    const query0 = `SET FOREIGN_KEY_CHECKS = 0`;
+    await this.execQueryPromise(query0)
+    .catch(err => console.error(err));
+
+    const query = `DELETE FROM flights WHERE flight_id='${id}'`;
+    await this.execQueryPromise(query)
+    .catch(err => console.error(err))
+    .then(rows => data = rows);
+
+    const query2 = `DELETE FROM tickets WHERE flight_id='${id}'`;
+    await this.execQueryPromise(query2)
+    .catch(err => console.error(err));
+
+    const query3 = `SET FOREIGN_KEY_CHECKS = 1`;
+    await this.execQueryPromise(query3)
+    .catch(err => console.error(err));
+    return data;
+  }
+
 }
 
 module.exports = { Database };

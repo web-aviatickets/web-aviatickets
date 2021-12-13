@@ -8,6 +8,31 @@ html {
   scrollbar-width: none;
   scrollbar-color: whitesmoke rgba(0, 0, 0, 0);
   margin: 0%;
+  padding: 0;
+}
+
+form input {
+  margin: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul label {
+  display: block;
+}
+
+input[type="reset"], #create-btn, #update-btn {
+  display: inline;
+  margin: 10px;
+  border-radius: 30px;
+  background-color: #F2BD35;
+  cursor: pointer;
+  border: none;
+  height: 80px;
+  width: 200px;
+  font-size: medium;
 }
 
 body::-webkit-scrollbar {
@@ -17,6 +42,29 @@ body::-webkit-scrollbar {
 body {
   margin: 0%;
   background: linear-gradient(180deg, #00988E 0%, #FFFFFF 100%);
+}
+
+li {
+  font-size:x-large;
+  color: white;
+}
+
+.admin {
+  width: 28%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.admin input {
+  width: auto;
+}
+
+.main-container {
+  margin: 0;
+  padding: 0%;
+  background: linear-gradient(180deg, #00988E 0%, #FFFFFF 100%);
+  width: 100%;
+  height: 100%;
 }
 
 header {

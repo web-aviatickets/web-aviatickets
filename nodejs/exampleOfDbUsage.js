@@ -11,7 +11,10 @@ async function example () {
     if (err) throw err;
     // get all free seats of many flights by params
     let flightIds = [];
-    await database.getFlightsByParams('Париж', 'Пекін', '2021-12-31')
+    await database.createNewFlight('Рейс номер 333', '2021-12-29 14:59:59', 'Київ', 'Пекін', '02:00:00', 444, 555)
+    .then(res => console.log(res))
+    .catch(err => console.error(err));
+    await database.getFlightsByParams('Київ', 'Париж', '2021-12-29')
     .then(results => results.forEach(res => flightIds.push(res.flight_id)))
     .catch(err => console.error(err));
     for (let id of flightIds) {
