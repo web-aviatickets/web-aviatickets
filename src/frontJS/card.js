@@ -71,8 +71,8 @@ class TicketCard {
             <div class="ticket_block_choose">
               <div class="ticket_block_choose_text">Мінімальна ціна за квиток:</div>
               <div class="ticket_block_choose_text">${this.price} грн</div>
-              <div class="ticket_block_choose_btn" id="${this.id}">
-                <a href="/book"><button>Далі</button></a>
+              <div class="ticket_block_choose_btn">
+                <a href="#"><button id="${this.id}">Далі</button></a>
               </div>
             </div>
           </div>

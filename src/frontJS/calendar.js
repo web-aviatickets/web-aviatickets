@@ -5,6 +5,7 @@ const arrows = document.querySelector('.pasengers_data');
 arrows.addEventListener('click', e => {
     e.preventDefault();
     const arrow = e.target.closest('.arr');
+    console.dir(arrow);
     const nextArrow = arrow.nextElementSibling;
     const previousArrow = arrow.previousElementSibling;
     if (nextArrow) {

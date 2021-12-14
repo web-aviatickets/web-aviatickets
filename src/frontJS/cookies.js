@@ -1,4 +1,5 @@
 const btn = document.querySelector('section');
+//const btn = document.querySelector('.ticket_block_choose');
 
 const setCookieByID = (name, value, options = {}) => {
     options = {
@@ -36,22 +37,25 @@ const getCookieByID = (name) => {
     })
   }
 
-btn.addEventListener('click', e => {
-    const button = e.target.closest('.ticket_block_choose_btn');
-    const arr = JSON.parse(getCookieByID('flight_info'))
-    for (let i = 0; i < arr.length; i++) {
-        button.id = arr[i]['flight_id']
-        const id = button.id;
-        console.log(id);
-        if (parseInt(id) === arr[i]['flight_id'] && !getCookieByID(`flight${id}`)) {
-            console.log(id + 'set');
-            setCookieByID(`flight${id}`, JSON.stringify([arr[i]]));
-            break;
+  btn.addEventListener('click', e => {
+    const button = e.target;
+    const id = parseInt(button.id);
+    let count = [];
+    const arr = JSON.parse(getCookieByID('flight_info'));
+    if (!getCookieByID(`flight${id}`)) {
+      arr.forEach(({flight_id}, index) => {
+        const flightId = arr[index]['flight_id'];
+        if (id === flightId) {
+          count = arr[index];
         } 
-        else if (getCookieByID(`flight${id}`)) {
-            console.log(id + 'delete');
-            deleteCookie(`flight${id}`);
+        if (getCookieByID(`flight${flightId}`)) { 
+          deleteCookie(`flight${flightId}`)
         }
+      });
+      setCookieByID(`flight${id}`, JSON.stringify([count]));
+      return;
     }
-    });
-
+    else if (getCookieByID(`flight${id}`)) {
+      deleteCookie(`flight${id}`);        
+    }
+  });

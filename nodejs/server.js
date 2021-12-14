@@ -146,7 +146,7 @@ class Server {
     });
   
     req.on('end', async () => {
-      if (name === '//getFromDB') {
+      if (name === '//getFromDB' || name === '/chooseTicket/getFromDB') {
         const arr = [];
         const con = await this.database.createConnection();
         con.connect( async (err) => {
