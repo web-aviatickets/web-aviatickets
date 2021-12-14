@@ -100,12 +100,17 @@ class Server {
       const con = await this.database.createConnection();
       con.connect( async (err) => {
         if (err) throw err;
-        await this.database.anyQuery(`SELECT f.flight_name, f.flight_id, f.flight_duration, f.flight_date, p.place_name AS "from", p1.place_name AS "to"
+        await this.database.anyQuery(`SELECT f.flight_name, f.flight_id, f.flight_duration, f.flight_date, p.place_name AS "from", p1.place_name AS "to", t.ticket_price AS "lower", t1.ticket_price AS "higher"
                                       FROM flights f
                                       INNER JOIN places p 
                                       ON p.place_id = f.from_place
                                       INNER JOIN places p1
-                                      ON p1.place_id = f.where_place;`)
+                                      ON p1.place_id = f.where_place
+                                      INNER JOIN tickets t
+                                      ON f.flight_id = t.flight_id
+                                      INNER JOIN tickets t1
+                                      ON f.flight_id = t1.flight_id
+                                      WHERE t.seat_number = 1 AND t1.seat_number = 56`)
         .then(response => {
           res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });
           res.write(JSON.stringify(response));
@@ -203,7 +208,7 @@ class Server {
         const con = await this.database.createConnection();
         con.connect( async (err) => {
           if (err) throw err;
-          await this.database.updateFlight(vars.flightName, vars.datetime, vars.from, vars.to, vars.duration, vars.flightId)
+          await this.database.updateFlight(vars.flightName, vars.datetime, vars.from, vars.to, vars.duration, vars.flightId, vars.lowerCost, vars.higherCost)
           .then(response => {
             console.log(response);
             res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });

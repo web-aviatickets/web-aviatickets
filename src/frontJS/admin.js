@@ -32,6 +32,8 @@ function flightIdUpdate(flightId) {
   document.getElementById('to-to-update').value = flights[flightId].to;
   document.getElementById('datetime-to-update').value = [flights[flightId].flight_date.split('.')[0].split(':')[0], flights[flightId].flight_date.split('.')[0].split(':')[1]].join(':');
   document.getElementById('duration-to-update').value = flights[flightId].flight_duration;
+  document.getElementById('lowerCost-to-update').value = flights[flightId].lower;
+  document.getElementById('higherCost-to-update').value = flights[flightId].higher;
   document.getElementById('flight-id').value = flights[flightId].flight_id;
 }
 

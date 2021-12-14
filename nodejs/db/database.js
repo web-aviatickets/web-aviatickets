@@ -266,7 +266,7 @@ class Database {
     return data;
   }
 
-  async updateFlight(flightName, flightDate, fromPlaceName, toPlaceName, flightDuration, flightId) {
+  async updateFlight(flightName, flightDate, fromPlaceName, toPlaceName, flightDuration, flightId, lowerCost, higherCost) {
     let data = null;
     const placeIds = [];
     let query = `SELECT *
@@ -294,6 +294,21 @@ class Database {
              from_place='${placeIds[0]}',
              where_place='${placeIds[1]}'
              WHERE flight_id='${flightId}'`;
+    await this.execQueryPromise(query)
+    .catch(err => console.error(err))
+    .then(rows => data = rows);
+    for (let i = 1; i <= 56; i++) {
+      const price = i > 28 ? higherCost : lowerCost;
+      await this.updateSeat(flightId, i, price).catch(err => console.error(err));
+    }
+    return data;
+  }
+
+  async updateSeat(flightId, seatNumber, seatPrice) {
+    let data = null;
+    const query = `UPDATE tickets
+                    SET ticket_price = ${seatPrice}
+                   WHERE flight_id = ${flightId} AND seat_number = ${seatNumber}`;
     await this.execQueryPromise(query)
     .catch(err => console.error(err))
     .then(rows => data = rows);
