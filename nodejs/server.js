@@ -169,13 +169,12 @@ class Server {
               httpError(res, 500, 'Server error');
               return;
             }
-            con.destroy();
             res.end(JSON.stringify(newData));
           } catch (err) {
             console.dir({ err });
             httpError(res, 500, 'Server error');
-            con.end();
           }
+          con.destroy();
         });
       } else if (name === '/createFlight') {
         const reg = new RegExp('name="[a-zA-Z]*"[\r\n]+.*', 'g');
@@ -257,7 +256,6 @@ class Server {
           if (err) throw err;
           await this.database.getAllSeats(id)
           .then(response => {
-            console.log(response);
             res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
             res.end(JSON.stringify(response));
           })
