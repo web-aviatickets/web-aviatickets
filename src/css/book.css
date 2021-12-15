@@ -163,7 +163,7 @@ button {
 }
 
 .places_choose_price {
-    display: flex;
+    /* display: flex; */
     justify-content: space-around;
     align-content: center;
     margin-top: 53px;
