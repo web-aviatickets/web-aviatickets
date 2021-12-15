@@ -70,7 +70,8 @@ form.addEventListener('submit', e => {
     const json = JSON.stringify(Object.fromEntries(formData.entries()));
     api[method](json)
         .then(data => {
-            console.log(data);
+            console.log(data[0]);
+            // if (data[])
             setCookie(`flight_info`, JSON.stringify([...data]));
             window.location.href = `${pathTo}`;
         })
