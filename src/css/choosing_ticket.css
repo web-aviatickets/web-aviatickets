@@ -280,6 +280,22 @@ span::before {
   margin-top: 60px;
 }
 
+.plane .stick {
+  width: 100%;
+  height: 3px;
+  border-radius: 16px;
+  transform: translateY(-50%);
+  background: #7271728a;
+  margin-top: 15px;
+}
+
+.plane_img {
+  position: absolute;
+  margin-top: -18px;
+  margin-left: 69px;
+  
+}
+
 .ticket_block_choose_text {
   font-family: "Roboto";
   font-style: normal;
@@ -291,6 +307,7 @@ span::before {
 }
 
 .ticket_block_choose_btn button {
+  cursor: pointer;
   width: 338.37px;
   height: 88px;
   background: #F2BD35;

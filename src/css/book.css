@@ -36,6 +36,7 @@ h1 {
 } */
 
 button {
+    cursor: pointer;
     width: 300px;
     height: 75px;
     background-color: #F2BD35;
@@ -336,7 +337,7 @@ button {
     height: 3px;
     border-radius: 16px;
     transform: translateY(-50%);
-    background: #5c1b69;
+    background: #7271728a;
     margin-top: 15px;
 }
 
@@ -1004,4 +1005,12 @@ input[type="radio"]:checked ~ .radio_text {
 
 section.payment_methods {
     margin-top: 20px;
+}
+
+div.style-title[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background-color: red;
 }

@@ -47,7 +47,12 @@ class TicketCard {
                     <div class="ticket_block_info_way_arrow_text_info">${this.name}</div>
                     <div class="ticket_block_info_way_arrow_text_info">${this.duration.split(':')[0]} год ${this.duration.split(':')[1]} хв</div>
                   </div>
-                  <span></span>
+                  <div class="plane">
+                      <div class="stick"></div>
+                      <div class="plane_img" >
+                          <img style="width: 30px; height: 30px" src="../img/icons/Icons8-Windows-8-Transport-Airplane-Mode-On.ico" alt="plane">
+                      </div>
+                  </div>
                   <div class="ticket_block_info_way_arrow_text">
                     <div class="ticket_block_info_way_arrow_text_info">Економ клас (L)</div>
                     <div class="ticket_block_info_way_arrow_text_info">Багаж 23K</div>
