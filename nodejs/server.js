@@ -249,6 +249,21 @@ class Server {
           .catch(err => console.error(err));
           con.destroy();
         });
+      } else if (name === '/book/getPlaces') {
+        const id = JSON.parse(data);
+        console.log(id);
+        const con = await this.database.createConnection();
+        con.connect( async (err) => {
+          if (err) throw err;
+          await this.database.getAllSeats(id)
+          .then(response => {
+            console.log(response);
+            res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+            res.end(JSON.stringify(response));
+          })
+          .catch(err => console.error(err));
+          con.destroy();
+        });
       }
     });
   }
