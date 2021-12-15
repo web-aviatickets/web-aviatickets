@@ -10,18 +10,9 @@ async function example () {
   con.connect( async (err) => {
     if (err) throw err;
     // get all free seats of many flights by params
-    let flightIds = [];
-    await database.createNewFlight('Рейс номер 333', '2021-12-29 14:59:59', 'Київ', 'Пекін', '02:00:00', 444, 555)
+    await database.anyQuery('UPDATE tickets SET taken = 1 WHERE ticket_id IN (2, 30, 12, 13, 24, 56, 30, 90, 64, 65, 78)')
     .then(res => console.log(res))
-    .catch(err => console.error(err));
-    await database.getFlightsByParams('Київ', 'Париж', '2021-12-29')
-    .then(results => results.forEach(res => flightIds.push(res.flight_id)))
-    .catch(err => console.error(err));
-    for (let id of flightIds) {
-      await database.getAllSeats(id)
-      .then(res => console.log(res))
-      .catch(err => console.error(err));
-    }
+.catch(err => console.error(err));
     con.destroy();
   });
 }
