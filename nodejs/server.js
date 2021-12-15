@@ -24,7 +24,8 @@ const routing = {
   '/contactInfo': '/src/contact_info.html',
   '/payment': '/src/payment.html',
   '/book': '/src/book.html',
-  '/admin': '/src/admin.html'
+  '/admin': '/src/admin.html',
+  '/tickets': '/src/tickets.html'
 }
 
 
@@ -225,6 +226,21 @@ class Server {
         con.connect( async (err) => {
           if (err) throw err;
           await this.database.deleteFlightById(id)
+          .then(response => {
+            res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });
+            res.write(JSON.stringify(response));
+            res.end();
+          })
+          .catch(err => console.error(err));
+          con.destroy();
+        });
+      } else if (name === '/bookTicket') {
+        const id = JSON.parse(data);
+        console.log(id);
+        const con = await this.database.createConnection();
+        con.connect( async (err) => {
+          if (err) throw err;
+          await this.database.bookTicket(id, 1)
           .then(response => {
             res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });
             res.write(JSON.stringify(response));

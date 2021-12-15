@@ -180,15 +180,9 @@ class Database {
     const query = `UPDATE tickets 
                    SET tickets.taken = true
                    WHERE tickets.ticket_id = '${ticketId}'`;
-    const query2 = `INSERT INTO booked_tickets(ticket_id, customer_id)
-                    VALUES('${ticketId}', '${customerId}')`;
     await this.execQueryPromise(query)
     .catch(err => console.error(err))
     .then(rows => success = rows.affectedRows == 1);
-    await this.execQueryPromise(query2)
-    .catch(err => console.error(err))
-    .then(rows => data = rows);
-    if (success === false) console.error('Value is not inserted');
     return data;
   }
 
@@ -259,8 +253,8 @@ class Database {
     .then(rows => data = rows);
     if (data.affectedRows != 1) return data;
     const flightId = data.insertId;
-    for (let i = 1; i <= 56; i++) {
-      const price = i > 28 ? defaultPrice1 : defaultPrice2;
+    for (let i = 1; i <= 64; i++) {
+      const price = i%2 ? defaultPrice2 : defaultPrice1;
       await this.createNewSeat(flightId, i, price).catch(err => console.error(err));
     }
     return data;
@@ -297,8 +291,8 @@ class Database {
     await this.execQueryPromise(query)
     .catch(err => console.error(err))
     .then(rows => data = rows);
-    for (let i = 1; i <= 56; i++) {
-      const price = i > 28 ? higherCost : lowerCost;
+    for (let i = 1; i <= 64; i++) {
+      const price = i%2 ? higherCost : lowerCost;
       await this.updateSeat(flightId, i, price).catch(err => console.error(err));
     }
     return data;
