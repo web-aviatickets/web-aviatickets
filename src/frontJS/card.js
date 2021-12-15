@@ -13,6 +13,13 @@ const getResource = () => {
   });
 }
 
+const dateTimeFormat = new Intl.DateTimeFormat('uk_UA', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+
 class TicketCard {
     constructor(date, duration, id, name, from, to, price) {
         this.id = id;
@@ -38,7 +45,7 @@ class TicketCard {
             <div class="ticket_block_info">
               <div class="ticket_block_info_way">
                 <div class="ticket_block_info_way_from">
-                  ${this.date.split('T')[0]}
+                  ${dateTimeFormat.format(new Date(this.date.split('T')[0]))}
                   <br>
                   ${this.from}
                 </div>
@@ -59,7 +66,7 @@ class TicketCard {
                   </div>
                 </div>
                 <div class="ticket_block_info_way_to">
-                ${this.date.split('T')[0]}
+                ${dateTimeFormat.format(new Date(this.date.split('T')[0]))}
                   <br>
                   ${this.to}
                 </div>
