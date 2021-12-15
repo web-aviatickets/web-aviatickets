@@ -27,20 +27,10 @@ const getAllSeats = (args) => {
               })
               .then(data => data.json())
               .then(data => {
-                  console.log(data);
-
-                  // for (let i = 0; i < data.length; i++) {
-                  //     const { seat_number, taken, ticket_price } = data[i];
-                  //     const place = choosedPlaces[seat_number];
-                  //     if (taken !== 0) {
-                  //         place.classList.add('grey');
-                  //         place.classList.add('white');
-                  //     }
-                  // }
-                  choosedPlaces.forEach(({textContent}, i) => {
-                      const place = choosedPlaces[i];
-                      const index = parseInt(textContent);
-                      const { seat_number, taken, ticket_price } = data[index];
+                choosedPlaces.forEach((place, i) => {
+                      const index = parseInt(place.textContent);
+                      const { taken, seat_number, ticket_price } = data[index - 1];
+                      place.title = ticket_price;
                       if (taken !== 0) {
                           place.classList.add('grey');
                       }
