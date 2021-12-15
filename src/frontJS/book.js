@@ -1,17 +1,17 @@
 const places = document.querySelector('.places_choose_board_cabin');
-const arr = [];
+let prevPlace;
 
 places.addEventListener('click', e => {
     e.preventDefault();
     const place = e.target.closest('.place');
-    const choosed_place = choise_place(place);
+    choose_place(place);
 });
 
-function choise_place(place) {
-  arr.push(place);
-  for(let i = 0; i < arr.length - 1; i++) {
-    if (arr[i].classList.contains('red')) arr[i].classList.toggle('red');
+function choose_place(place) {
+  if (typeof(prevPlace) != 'undefined'){
+    if (prevPlace.classList.contains('red')) prevPlace.classList.toggle('red');
   }
-  if (arr[arr.length-1].classList.contains('white')) place.classList.toggle('red');
-  return arr[arr.length-1];
+  const currentPlace = place;
+  if (currentPlace.classList.contains('white')) currentPlace.classList.toggle('red');
+  prevPlace = currentPlace;
 }
