@@ -81,3 +81,5 @@ function choose_place(place) {
   }
   prevPlace = currentPlace;
 }
+
+getAllSeats(JSON.stringify(flightInfo[0]['flight_id']));
