@@ -42,20 +42,11 @@ const getCookieByID = (name) => {
     const id = parseInt(button.id);
     let count = [];
     const arr = JSON.parse(getCookieByID('flight_info'));
-    if (!getCookieByID(`flight${id}`)) {
-      arr.forEach(({flight_id}, index) => {
-        const flightId = arr[index]['flight_id'];
-        if (id === flightId) {
-          count = arr[index];
-        } 
-        if (getCookieByID(`flight${flightId}`)) { 
-          deleteCookie(`flight${flightId}`)
-        }
-      });
-      setCookieByID(`flight${id}`, JSON.stringify([count]));
-      return;
-    }
-    else if (getCookieByID(`flight${id}`)) {
-      deleteCookie(`flight${id}`);        
-    }
+    arr.forEach(({flight_id}, index) => {
+      const flightId = arr[index]['flight_id'];
+      if (id === flightId) {
+        count = arr[index];
+      } 
+      setCookieByID(`flight`, JSON.stringify([count]));
+    });
   });

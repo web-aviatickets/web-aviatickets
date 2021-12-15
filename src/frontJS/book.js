@@ -45,7 +45,7 @@ const deleteCookies = (name) => {
   })
 }
 
-const flightInfo = JSON.parse(getCookies('flight_info'));
+const flightInfo = JSON.parse(getCookies('flight'));
 
 const getAllSeats = (args) => {
        console.log(args);
@@ -66,15 +66,7 @@ const getAllSeats = (args) => {
                   })
             });
 }
-let arrCookies = [];
-let flightID;
-flightInfo.forEach(({flight_id}) => {
-    if (getCookies(`flight${parseInt(flight_id)}`)) {
-        getAllSeats(JSON.stringify(flight_id));
-        flightID = flight_id;
-        arrCookies = JSON.parse(getCookies(`flight${parseInt(flight_id)}`));
-    }
-});
+
 
 function choose_place(place) {
   if (typeof(prevPlace) != 'undefined'){
@@ -83,9 +75,9 @@ function choose_place(place) {
   const currentPlace = place;
   if (currentPlace.classList.contains('white') && !currentPlace.classList.contains('grey')) { 
     currentPlace.classList.toggle('red');
-    arrCookies[0]['seat_number'] = place.textContent;
-    arrCookies[0]['ticket_price'] = place.title;
-    setCookies(`flight${flightID}`, JSON.stringify([arrCookies]))
+    flightInfo[0]['seat_number'] = place.textContent;
+    flightInfo[0]['ticket_price'] = place.title;
+    setCookies(`flight`, JSON.stringify(flightInfo));
   }
   prevPlace = currentPlace;
 }
