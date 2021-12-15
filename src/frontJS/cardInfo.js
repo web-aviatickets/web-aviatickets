@@ -41,17 +41,13 @@ class TicketCard {
                 </div>
                 <div class="ticket_information_blk_city-duration">
                     <div class="airports">
-                        <div class="departure">17:05</div>
+                        <div class="departure" style="margin-right: 5px">${this.date.split('T')[1].split('.')[0]}</div>
                         <div class="plane">
                             <div class="stick"></div>
                             <div class="plane_img">
                                 <img src="../img/icons/Icons8-Windows-8-Transport-Airplane-Mode-On.ico" alt="plane">
                             </div>
                         </div>
-                        <div class="arrival">19:00</div>
-                    </div>
-                    <div class="time_of_flight">
-                    ${this.duration.split(':')[0]} год ${this.duration.split(':')[1]} хв
                     </div>
                     <div class="company">
                         <img src="../img/windrose.png" alt="company">
@@ -63,7 +59,7 @@ class TicketCard {
                         <div class="city_name_to">${this.to}</div>
                     </div>
                     <div class="ticket_information_blk_addition-race">
-                        <div class="race_to">${this.name}</div>
+                        <div class="race_to" style="margin-left:30px">${this.name}</div>
                     </div>
                 </div>
             </div>

@@ -56,16 +56,19 @@ const getAllSeats = (args) => {
               })
               .then(data => data.json())
               .then(data => {
+                console.log(data);
                 choosedPlaces.forEach((place, i) => {
                       const index = parseInt(place.textContent);
                       const { taken, seat_number, ticket_price } = data[index - 1];
                       place.title = ticket_price;
-                      if (taken !== 0) {
+                      if (taken == 1) {
                           place.classList.add('grey');
                       }
                   })
             });
 }
+
+getAllSeats(JSON.stringify(flightInfo[0]['flight_id']))
 
 
 function choose_place(place) {
@@ -82,4 +85,10 @@ function choose_place(place) {
   prevPlace = currentPlace;
 }
 
-getAllSeats(JSON.stringify(flightInfo[0]['flight_id']));
+const nam = new RegExp(`(?<=flight=)[^;]*`)
+  const cook = decodeURIComponent(document.cookie).match(nam)[0];
+  document.getElementById('flight_name').innerText = cook.match(new RegExp('flight_name":"[а-яА-Я 0-9a-zA-ZіїІЇ]*', 'g'))[0].split('"')[2];
+  document.getElementById('from-city').innerText = cook.match(new RegExp('from":"[а-яА-Я a-zA-ZіїІЇ]*', 'g'))[0].split('"')[2];
+  document.getElementById('to-city').innerText = cook.match(new RegExp('to":"[а-яА-Я 0-9a-zA-ZіїІЇ]*', 'g'))[0].split('"')[2];
+  document.getElementById('departure').innerText = cook.match(new RegExp('flight_date":"[а-яА-Я 0-9a-zA-ZіїІЇ:-]*', 'g'))[0].split('"')[2].split('T')[1];
+  document.getElementById('dep-date').innerText = cook.match(new RegExp('flight_date":"[а-яА-Я 0-9a-zA-ZіїІЇ:-]*', 'g'))[0].split('"')[2].split('T')[0];

@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>Купити Авіаквитки Онлайн | Web Aviatickets</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="description"  content="Купити авіаквитки онлайн, легко і зручно. Оберіть свій найкращий рейс!">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/book.css">
+    <link rel="stylesheet" href="src/css/footer.css">
+    <script src="src/frontJS/form.js" defer></script>
+    <script src="src/frontJS/footer.js" defer></script>
+    <script src="src/frontJS/tickets.js" defer></script>
+    <script defer src="src/frontJS/calendar.js"></script>
+    <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
+    <style>
+      section {
+        padding: 0 20px;
+      }
+      .num_place span, .num_price span {
+        font-size: 24px;
+        font-weight: 700;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body >
+    <header style="margin: 10px auto 20px 20px">
+      <div onclick="window.location.pathname = '/'" class="logo"><img src="../img/logo/logo.png" alt="Лого Авіаквитки"></div>
+    </header>
+    <section id="about-container" style="height: 800px">
+      <div class="ticket_information"> 
+        <h2 style="margin-bottom:40px; color:rgb(31, 31, 68)" class="subhead">Ваш квиток:</h2>
+        <h3 style="margin-bottom: 10px">Інформація про пасажира</h3>
+        <div class="num_place">Ім'я: <span id="name">Тарас</span></div>
+        <div class="num_place">Прізвище:<span id="surname">Шевченко</span></div>
+        <div class="num_place">Електронна пошта:<span id="email">something@gmail.com</span></div>
+        <div class="num_place">Телефон:<span id="phonenumber">091234567</span></div>
+        <div class="num_place">Дата народження:<span>09 лютого 2001</span></div>
+        <div class="num_place">Стать:<span>Чоловік</span></div>
+        
+        <hr style="border: none; height: 1px; margin: 9px 0">
+        <h3 style="margin-bottom: 10px" >Ваш тариф</h3>
+        <div class="num_place" >Ціна квитка: <span id="ticket_price">450</span> грн</div>
+        <div class="num_place">Номер посадкового місця: <span id="seat_number">45</span></div>
+      
+        <hr style="border: none; height: 1px; margin: 20px 0">
+        <h3 >Деталі перельоту</h4>
+        <div class="ticket_information_blk" style="padding-left: 10%; font-size:20px">
+          <div style="margin:20px 0" class="ticket_information_blk_addition-race">
+            <div class="race_to" id="flight_name">Рейс 7W101</div>
+          </div>
+          <div class="ticket_information_blk_date-time">
+              <div class="ticket_information_blk_date" id="dep-date" style = "margin-right: 5px">18 грудня, субота</div>
+              <div class="ticket_information_blk_time" id="duration">16 г 10 хв</div>
+          </div>
+          <div class="ticket_information_blk_city-duration">
+              <div class="airports">
+                  <div class="departure" id="departure">17:05</div>
+                  <div class="plane">
+                      <div class="stick"></div>
+                      <div class="plane_img">
+                          <img src="../img/icons/Icons8-Windows-8-Transport-Airplane-Mode-On.ico" alt="plane">
+                      </div>
+                  </div>
+              </div>
+              <div class="company">
+                  <img src="../img/windrose.png" alt="company">
+              </div>
+          </div>
+          <div class="ticket_information_blk_addition">
+              <div class="ticket_information_blk_addition-name">
+                  <div class="city_name_from" id="from-city">Париж</div>
+                  <div class="city_name_to" id="to-city">Пекін</div>
+              </div>
+              
+          </div>
+          
+        </div>
+
+      </div>
+    </section>
+    <footer></footer>
+  </body>
+</html>

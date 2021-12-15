@@ -254,7 +254,7 @@ class Database {
     if (data.affectedRows != 1) return data;
     const flightId = data.insertId;
     for (let i = 1; i <= 64; i++) {
-      const price = i%2 ? defaultPrice2 : defaultPrice1;
+      const price = i%2 === 0 ? defaultPrice2 : defaultPrice1;
       await this.createNewSeat(flightId, i, price).catch(err => console.error(err));
     }
     return data;
@@ -292,7 +292,8 @@ class Database {
     .catch(err => console.error(err))
     .then(rows => data = rows);
     for (let i = 1; i <= 64; i++) {
-      const price = i%2 ? higherCost : lowerCost;
+      console.log(i, higherCost, lowerCost)
+      const price = i%2 === 0? higherCost : lowerCost;
       await this.updateSeat(flightId, i, price).catch(err => console.error(err));
     }
     return data;

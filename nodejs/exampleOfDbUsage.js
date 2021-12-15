@@ -10,9 +10,9 @@ async function example () {
   con.connect( async (err) => {
     if (err) throw err;
     // get all free seats of many flights by params
-    await database.anyQuery('UPDATE tickets SET taken = 1 WHERE ticket_id IN (2, 30, 12, 13, 24, 56, 30, 90, 64, 65, 78)')
+    await database.anyQuery('SELECT * FROM tickets WHERE ticket_id > 400')
     .then(res => console.log(res))
-.catch(err => console.error(err));
+    .catch(err => console.error(err));
     con.destroy();
   });
 }

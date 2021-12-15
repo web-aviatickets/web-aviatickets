@@ -184,6 +184,7 @@ class Server {
           const arr = param.split('"');
           vars[arr[1]] = arr[2].replace(/[\r\n]+/g,'');
         }
+        console.log(vars);
         const con = await this.database.createConnection();
         con.connect( async (err) => {
           if (err) throw err;
@@ -239,8 +240,11 @@ class Server {
         const con = await this.database.createConnection();
         con.connect( async (err) => {
           if (err) throw err;
-          await this.database.bookTicket(id, 1)
+          await this.database.anyQuery(`UPDATE tickets 
+          SET taken = true
+          WHERE seat_number = ${id.id} AND flight_id=${id.fl}`)
           .then(response => {
+            console.log(response);
             res.writeHead(200, { 'Content-Type': `application/json; charset=utf-8` });
             res.write(JSON.stringify(response));
             res.end();
